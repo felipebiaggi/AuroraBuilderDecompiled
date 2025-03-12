@@ -13,7 +13,9 @@ namespace Builder.Data.Rules.Attributes
 
         public string Requirements { get; set; }
 
+#pragma warning disable CS0618 // Type or member is obsolete
         public string Id => Name;
+#pragma warning restore CS0618 // Type or member is obsolete
 
         public GrantAttributes()
         {

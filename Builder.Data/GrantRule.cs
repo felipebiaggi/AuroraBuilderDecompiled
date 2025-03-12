@@ -19,7 +19,9 @@ namespace Builder.Data.Rules
 
         public override string ToString()
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             return base.ToString() + " type:" + Attributes.Type + " name:" + Attributes.Name;
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
     }

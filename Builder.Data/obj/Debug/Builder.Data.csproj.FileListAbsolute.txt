@@ -1,0 +1,11 @@
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.csproj.AssemblyReference.cache
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.csproj.CoreCompileInputs.cache
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Data.dll
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Data.pdb
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Core.dll
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\DynamicExpresso.Core.dll
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Core.pdb
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\de\DynamicExpresso.Core.resources.dll
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder..D34D70F7.Up2Date
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.dll
+C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.pdb

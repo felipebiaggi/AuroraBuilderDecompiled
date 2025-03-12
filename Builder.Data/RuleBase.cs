@@ -8,18 +8,18 @@ namespace Builder.Data.Rules
 
         public ElementHeader ElementHeader { get; set; }
 
-        public ElementSetters Setter { get; set; }
+        public ElementSetters Setters { get; set; }
 
         protected RuleBase(string ruleName, ElementHeader elementHeader)
         {
             RuleName = ruleName;
             ElementHeader = elementHeader;
-            Setter = new ElementSetters();
+            Setters = new ElementSetters();
         }
 
-        public bool ContainsSetter()
+        public bool ContainsSetters()
         {
-            return Setter?.Any() ?? false;
+            return Setters?.Any() ?? false;
         }
 
         public override string ToString()

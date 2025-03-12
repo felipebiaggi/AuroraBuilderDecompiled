@@ -10,6 +10,8 @@ namespace Builder.Data.Rules.Attributes
 
         public int RequiredLevel { get; set; }
 
+        public string Requirements { get; set; }
+
         public int Number { get; set; }
 
         public string Supports { get; set; }

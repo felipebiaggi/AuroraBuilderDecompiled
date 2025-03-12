@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Builder.Data.Rules
+﻿namespace Builder.Data.Rules
 {
-    class IgnoreRule
+    public sealed class IgnoreRule : RuleBase
     {
+        public string ID { get; set; }
+
+        public IgnoreRule(ElementHeader parentHeader)
+            : base("ignore", parentHeader)
+        {
+        }
     }
+
 }

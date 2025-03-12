@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamicExpresso.Core, Version=2.17.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicExpresso.Core.2.17.2\lib\netstandard2.0\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,17 +48,32 @@
     <Compile Include="ArrayExtensions.cs" />
     <Compile Include="ArrayTraverse.cs" />
     <Compile Include="DuplicateElementException.cs" />
+    <Compile Include="ElementBase.cs" />
+    <Compile Include="ElementBaseCollection.cs" />
+    <Compile Include="ElementDescriptionHelper.cs" />
+    <Compile Include="ElementEquipment.cs" />
     <Compile Include="ElementHeader.cs" />
     <Compile Include="ElementSetters.cs" />
+    <Compile Include="ElementSheetDescriptions.cs" />
+    <Compile Include="ElementSourceInfo.cs" />
     <Compile Include="GrantAttributes.cs" />
     <Compile Include="GrantRule.cs" />
     <Compile Include="IgnoreRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuleBase.cs" />
+    <Compile Include="RuleExtensions.cs" />
     <Compile Include="SelectAttributes.cs" />
     <Compile Include="SelectionRuleListItem.cs" />
     <Compile Include="SelectRule.cs" />
+    <Compile Include="SpellcastingInformation.cs" />
     <Compile Include="StatisticAttributes.cs" />
+    <Compile Include="StatisticRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Builder.Core\Builder.Core.csproj">
+      <Project>{9b59b7d0-75e3-48d2-a3cc-c4b26c8a12b3}</Project>
+      <Name>Builder.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
