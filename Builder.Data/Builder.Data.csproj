@@ -42,14 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AquisitionInfo.cs" />
+    <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="ArrayTraverse.cs" />
+    <Compile Include="DuplicateElementException.cs" />
     <Compile Include="ElementHeader.cs" />
     <Compile Include="ElementSetters.cs" />
     <Compile Include="GrantAttributes.cs" />
     <Compile Include="GrantRule.cs" />
+    <Compile Include="IgnoreRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuleBase.cs" />
     <Compile Include="SelectAttributes.cs" />
     <Compile Include="SelectionRuleListItem.cs" />
+    <Compile Include="SelectRule.cs" />
     <Compile Include="StatisticAttributes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

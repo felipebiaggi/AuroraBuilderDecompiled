@@ -1,6 +1,0 @@
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Data.dll
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\bin\Debug\Builder.Data.pdb
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.csproj.AssemblyReference.cache
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.csproj.CoreCompileInputs.cache
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.dll
-C:\Users\Akaza\source\repos\AuroraBuilderDecompiler\Builder.Data\obj\Debug\Builder.Data.pdb
