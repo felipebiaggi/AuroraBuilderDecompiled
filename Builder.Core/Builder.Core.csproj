@@ -41,14 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugLogger.cs" />
-    <Compile Include="EventAggregator.cs" />
-    <Compile Include="EventBase.cs" />
-    <Compile Include="IEventAggregator.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="ISubscriber.cs" />
-    <Compile Include="Log.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="Logging\DebugLogger.cs" />
+    <Compile Include="Events\EventAggregator.cs" />
+    <Compile Include="Events\EventBase.cs" />
+    <Compile Include="Events\IEventAggregator.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Events\ISubscriber.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="RegexReplaceService.cs" />
     <Compile Include="ObservableObject.cs" />
