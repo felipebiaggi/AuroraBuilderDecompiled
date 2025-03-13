@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5E30D25-2776-40FB-9FE1-7FFF7BD45ABE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Builder.Presentation</RootNamespace>
+    <AssemblyName>Builder.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WPF, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.WPF.1.5.0.6\lib\net45\HtmlRenderer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.4\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="Commands\ApplicationCommandManager.cs" />
+    <Compile Include="Commands\ApplicationCommands.cs" />
+    <Compile Include="Commands\ApplyRestrictionsCommand.cs" />
+    <Compile Include="Commands\GenerateCharacterSheetPreviewCommand.cs" />
+    <Compile Include="Commands\LoadDefaultRestrictionsCommand.cs" />
+    <Compile Include="Commands\ManageRestrictionsCommand.cs" />
+    <Compile Include="Commands\SaveDefaultRestrictionsCommand.cs" />
+    <Compile Include="Commands\Settings\ActivateDarkThemeCommand.cs" />
+    <Compile Include="Commands\Settings\ActivateDefaultAccentCommand.cs" />
+    <Compile Include="Commands\Settings\ActivateLightThemeCommand.cs" />
+    <Compile Include="Commands\Settings\SettingsCommand.cs" />
+    <Compile Include="Commands\SourceApplicationCommands.cs" />
+    <Compile Include="Controls\AngleToIsLargeConverter.cs" />
+    <Compile Include="Controls\AngleToPointConverter.cs" />
+    <Compile Include="Controls\AuroraExpander.cs" />
+    <Compile Include="Controls\AuroraPanel.cs" />
+    <Compile Include="Controls\CharacterProfileButton.cs" />
+    <Compile Include="Controls\CircularProgressBar.cs" />
+    <Compile Include="Controls\ElementDescriptionPanel.cs" />
+    <Compile Include="Controls\PortraitButton.cs" />
+    <Compile Include="Controls\PortraitButtonInnerCircleValueConverter.cs" />
+    <Compile Include="Controls\PortraitSizeToScaleValueConverter.cs" />
+    <Compile Include="Controls\PortraitSizeToStrokeValueConverter.cs" />
+    <Compile Include="Controls\SliderTitleBlock.cs" />
+    <Compile Include="Converter\ElementProficiencyBrushValueConvereter.cs" />
+    <Compile Include="Converter\ElementProficiencyValueConvereter.cs" />
+    <Compile Include="Converter\InventoryEquipmentItemUnderlineVisibilityConverter.cs" />
+    <Compile Include="Converter\InvertedThemeColorConverter.cs" />
+    <Compile Include="Converter\InverterBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converter\IsExpertiseAbilityConverter.cs" />
+    <Compile Include="Converter\IsExpertiseVisibilityConverter.cs" />
+    <Compile Include="Converter\IsProficientAbilityConverter.cs" />
+    <Compile Include="Converter\IsSpellReplacedValueConverter.cs" />
+    <Compile Include="Converter\ItemCostValueConverter.cs" />
+    <Compile Include="Converter\LocalImageSourceConverter.cs" />
+    <Compile Include="Converter\NullableInvertedBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converter\PortraitImageSourceConverter.cs" />
+    <Compile Include="Converter\RevisedDateValueConverter.cs" />
+    <Compile Include="Converter\SourceListingNameReplaceConverter.cs" />
+    <Compile Include="Converter\SuccessColorBrushConverter.cs" />
+    <Compile Include="Converter\SymbolGalleryImageSourceConverter.cs" />
+    <Compile Include="Converter\ThemeColorConverter.cs" />
+    <Compile Include="Data\DesignData.cs" />
+    <Compile Include="Documents\ExportContentGenerator.cs" />
+    <Compile Include="Elements\ElementCollectionEventArgs.cs" />
+    <Compile Include="Elements\ISourceRestrictionsProvider.cs" />
+    <Compile Include="Elements\SelectionCollectionService.cs" />
+    <Compile Include="Events\Application\AdditionalContentUpdatedEvent.cs" />
+    <Compile Include="Events\Application\DescriptionPanelContentsChanged.cs" />
+    <Compile Include="Events\Application\ResourceDocumentDisplayRequestEvent.cs" />
+    <Compile Include="Events\Application\SettingsChangedEvent.cs" />
+    <Compile Include="Events\Base\StatusUpdateEvent.cs" />
+    <Compile Include="Events\Character\CharacterBuildChangedEvent.cs" />
+    <Compile Include="Events\Character\CharacterLoadedEvent.cs" />
+    <Compile Include="Events\Character\CharacterLoadingCompletedEvent.cs" />
+    <Compile Include="Events\Character\CharacterLoadingEvent.cs" />
+    <Compile Include="Events\Character\CharacterManagerElementRegistered.cs" />
+    <Compile Include="Events\Character\CharacterManagerElementsUpdated.cs" />
+    <Compile Include="Events\Character\CharacterManagerElementUnregistered.cs" />
+    <Compile Include="Events\Character\CharacterManagerUpdateReason.cs" />
+    <Compile Include="Events\Character\CharacterNameChangedEvent.cs" />
+    <Compile Include="Events\Character\CharacterPortraitChangedEvent.cs" />
+    <Compile Include="Events\Character\CharacterSavedEvent.cs" />
+    <Compile Include="Events\Character\CharacterSavingEvent.cs" />
+    <Compile Include="Events\Character\CharacterSheetNextPageEvent.cs" />
+    <Compile Include="Events\Character\CharacterSheetPreviousPageEvent.cs" />
+    <Compile Include="Events\Character\CharacterSheetSavedEvent.cs" />
+    <Compile Include="Events\Character\CharacterSheetToggleViewEvent.cs" />
+    <Compile Include="Events\Data\DataManagerProgressChanged.cs" />
+    <Compile Include="Events\Developer\DeveloperWindowStatusUpdateEvent.cs" />
+    <Compile Include="Events\ElementEventBase.cs" />
+    <Compile Include="Events\ExpanderSelectionChanged.cs" />
+    <Compile Include="Events\ExpanderSelectionChangedEventArgs.cs" />
+    <Compile Include="Events\Global\CharacterManagerSelectionRuleCreated.cs" />
+    <Compile Include="Events\Global\CharacterManagerSelectionRuleDeleted.cs" />
+    <Compile Include="Events\Global\ElementSelectionChanged.cs" />
+    <Compile Include="Events\Global\ExpanderHandlerSelectionChanged.cs" />
+    <Compile Include="Events\Global\SpellcastingInformationCreatedEvent.cs" />
+    <Compile Include="Events\Global\SpellcastingInformationRemovedEvent.cs" />
+    <Compile Include="Events\Shell\CharacterLoadingSliderStatusUpdateEvent.cs" />
+    <Compile Include="Events\Shell\HideMainWindowStatusUpdateEvent.cs" />
+    <Compile Include="Events\Shell\MainWindowStatusUpdateEvent.cs" />
+    <Compile Include="Extensions\ComboBoxItemTemplateSelector.cs" />
+    <Compile Include="Extensions\ComboBoxItemTemplateSelector2.cs" />
+    <Compile Include="Extensions\DependencyObjectExtensions.cs" />
+    <Compile Include="Extensions\FlyoutExtensions.cs" />
+    <Compile Include="Extensions\IntegerExtensions.cs" />
+    <Compile Include="Extensions\PdfExtensions.cs" />
+    <Compile Include="Extensions\StringExtentions.cs" />
+    <Compile Include="Extensions\UserControlExtensions.cs" />
+    <Compile Include="Extensions\WindowExtensions.cs" />
+    <Compile Include="Factories\ResourceFactory.cs" />
+    <Compile Include="Interfaces\ISelectionRuleExpander.cs" />
+    <Compile Include="Interfaces\ISupportExpanders.cs" />
+    <Compile Include="Logging\EventLog.cs" />
+    <Compile Include="Logging\EventLogger.cs" />
+    <Compile Include="Logging\FileLogger.cs" />
+    <Compile Include="Models\AbilityItem.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\CharacterFile.cs" />
+    <Compile Include="Models\Companion.cs" />
+    <Compile Include="Models\CompanionStatistics.cs" />
+    <Compile Include="Models\SavingThrowItem.cs" />
+    <Compile Include="Models\SkillItem.cs" />
+    <Compile Include="Models\StatisticsBase.cs" />
+    <Compile Include="Services\Data\DataManager.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converter\AccentColorConverter.cs" />
+    <Compile Include="Converter\AccentNameConverter.cs" />
+    <Compile Include="Converter\AvailablePointsValueConverter.cs" />
+    <Compile Include="Converter\BonusStringValueConverter.cs" />
+    <Compile Include="Converter\BooleanToSolidColorBrushConverter.cs" />
+    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converter\CampaignSourceConverter.cs" />
+    <Compile Include="Converter\CompanionGalleryImageSourceConverter.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Sources\SourceItem.cs" />
+    <Compile Include="Models\Sources\SourcesGroup.cs" />
+    <Compile Include="Models\Sources\SourcesRootFolder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aurora.Documents\Aurora.Documents.csproj">
+      <Project>{34ac80e0-c5a5-40bd-b704-8621f8328c2a}</Project>
+      <Name>Aurora.Documents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aurora.Presentation\Aurora.Presentation.csproj">
+      <Project>{73a20727-8d02-4d05-9867-3adc0f7c7f75}</Project>
+      <Name>Aurora.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder.Core\Builder.Core.csproj">
+      <Project>{9b59b7d0-75e3-48d2-a3cc-c4b26c8a12b3}</Project>
+      <Name>Builder.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder.Data\Builder.Data.csproj">
+      <Project>{630ed0f9-45f7-40d4-8e95-a06231e3fb3d}</Project>
+      <Name>Builder.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Themes\" />
+    <Folder Include="UserControl\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

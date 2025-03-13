@@ -1,6 +1,5 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using Aurora.Presentation.Controls;
+﻿using System.Windows.Controls;
+using System.Windows;
 
 namespace Aurora.Presentation.Controls
 {
