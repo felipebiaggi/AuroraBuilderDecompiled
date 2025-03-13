@@ -76,7 +76,7 @@ namespace Builder.Core.Events
         private List<WeakReference> GetSubscriberList(Type subsriberType)
         {
             List<WeakReference> value = null;
-            lock (_lock)    
+            lock (_lock)
             {
                 if (!_subscribers.TryGetValue(subsriberType, out value))
                 {

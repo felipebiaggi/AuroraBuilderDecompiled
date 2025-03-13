@@ -16,8 +16,7 @@ namespace Builder.Data
 
             public bool HasAdditionalAttributes => AdditionalAttributes.Any();
 
-            public Setter(
-                string name, string value, Dictionary<string, string> additionalAttributes)
+            public Setter(string name, string value)
             {
                 Name = name;
                 Value = value.Trim();
