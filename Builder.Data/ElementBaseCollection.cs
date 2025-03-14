@@ -12,9 +12,10 @@ namespace Builder.Data
 {
     public class ElementBaseCollection : ObservableCollection<ElementBase>
     {
+        public string Name { get; set; }
+
         public ElementBaseCollection()
         {
-
         }
 
         public ElementBaseCollection(IEnumerable<ElementBase> elements)
@@ -35,7 +36,6 @@ namespace Builder.Data
             {
                 Add(element);
             }
-
         }
 
         public bool ContainsType(string type)
@@ -70,14 +70,12 @@ namespace Builder.Data
             {
                 return this;
             }
-
-            ElementBaseCollection elementBaseCollecion = new ElementBaseCollection(this);
+            ElementBaseCollection elementBaseCollection = new ElementBaseCollection(this);
             foreach (ElementBase ruleElement in elementBase.RuleElements)
             {
-                elementBaseCollecion.Remove(ruleElement);
+                elementBaseCollection.Remove(ruleElement);
             }
-
-            return elementBaseCollecion;
+            return elementBaseCollection;
         }
 
         public bool HasElement(string id)
@@ -109,7 +107,7 @@ namespace Builder.Data
             return HasElement(id) ? GetElement(id).Construct<TElement>() : null;
         }
 
-        public void RemoveELement(string id)
+        public void RemoveElement(string id)
         {
             if (HasElement(id))
             {
@@ -202,6 +200,5 @@ namespace Builder.Data
             Expression<Func<ElementBase, bool>> predicate = interpreter.ParseAsExpression<Func<ElementBase, bool>>(text, new string[1] { "x" });
             return new ElementBaseCollection(elements.AsQueryable().Where(predicate));
         }
-
     }
 }

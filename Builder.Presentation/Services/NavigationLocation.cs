@@ -1,0 +1,31 @@
+﻿namespace Builder.Presentation.Services
+{
+    public enum NavigationLocation
+    {
+        None,
+        Start,
+        StartCollection,
+        StartSources,
+        StartCustomContent,
+        Build,
+        BuildRace,
+        BuildClass,
+        BuildBackground,
+        BuildAbilities,
+        BuildLanguages,
+        BuildProficiencies,
+        BuildFeats,
+        BuildCompanion,
+        Magic,
+        MagicSpells,
+        MagicCompendium,
+        Equipment,
+        Manage,
+        ManageCharacter,
+        ManageBackground,
+        ManageAttacks,
+        ManageCompanion,
+        Sheet,
+        SheetCards
+    }
+}

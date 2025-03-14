@@ -1,15 +1,4 @@
-﻿using Builder.Core;
-using Builder.Core.Logging;
-using Builder.Data;
-using Builder.Data.Elements;
-using Builder.Data.Extensions;
-using Builder.Data.Rules;
-using Builder.Presentation.Events.Shell;
-using Builder.Presentation.Extensions;
-using Builder.Presentation.Models.Sources;
-using Builder.Presentation.Properties;
-using Builder.Presentation.Services.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -18,6 +7,32 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Builder.Core;
+using Builder.Core.Logging;
+using Builder.Data;
+using Builder.Data.Elements;
+using Builder.Data.Extensions;
+using Builder.Data.Rules;
+using Builder.Presentation;
+using Builder.Presentation.Events.Shell;
+using Builder.Presentation.Extensions;
+using Builder.Presentation.Models;
+using Builder.Presentation.Models.Collections;
+using Builder.Presentation.Models.Equipment;
+using Builder.Presentation.Models.Helpers;
+using Builder.Presentation.Models.NewFolder1;
+using Builder.Presentation.Models.Sources;
+using Builder.Presentation.Properties;
+using Builder.Presentation.Services;
+using Builder.Presentation.Services.Calculator;
+using Builder.Presentation.Services.Data;
+using Builder.Presentation.Telemetry;
+// using Builder.Presentation.UserControls.Spellcasting;
+using Builder.Presentation.Utilities;
+using Builder.Presentation.ViewModels;
+using Builder.Presentation.ViewModels.Shell.Items;
+using Builder.Presentation.ViewModels.Shell.Manage;
+// using Builder.Presentation.Views.Sliders;
 
 namespace Builder.Presentation.Models
 {
@@ -928,7 +943,7 @@ namespace Builder.Presentation.Models
 
         private async Task SendCharacterLoadingScreenProgressUpdate(int progress)
         {
-            ApplicationManager.Current.EventAggregator.Send(new CharacterLoadingSliderProgressEvent(progress));
+            // ApplicationManager.Current.EventAggregator.Send(new CharacterLoadingSliderProgressEvent(progress));
             await Task.Delay(50);
         }
 
@@ -999,7 +1014,7 @@ namespace Builder.Presentation.Models
                 { "name", item.Name },
                 { "id", item.Id }
             };
-                AppendAttributes(xmlNode3, attributesDictionary);
+                // AppendAttributes(xmlNode3, attributesDictionary);
                 xmlNode2.AppendChild(xmlNode3);
                 CreateRuleNodes(item, xmlNode3);
             }
@@ -1590,91 +1605,91 @@ namespace Builder.Presentation.Models
                 {
                     continue;
                 }
-                SpellcasterSelectionControlViewModel viewModel = current2.GetSpellcasterSection(spellcastingInformation.UniqueIdentifier).GetViewModel<SpellcasterSelectionControlViewModel>();
+                //SpellcasterSelectionControlViewModel viewModel = current2.GetSpellcasterSection(spellcastingInformation.UniqueIdentifier).GetViewModel<SpellcasterSelectionControlViewModel>();
                 XmlNode xmlNode = xmlElement.AppendChild(_document.CreateElement("spellcasting"));
                 xmlNode.AppendAttribute("name", spellcastingInformation.Name);
                 xmlNode.AppendAttribute("ability", spellcastingInformation.AbilityName);
-                xmlNode.AppendAttribute("attack", viewModel.InformationHeader.SpellAttackModifier.ToString());
-                xmlNode.AppendAttribute("dc", viewModel.InformationHeader.SpellSaveDc.ToString());
+                //xmlNode.AppendAttribute("attack", viewModel.InformationHeader.SpellAttackModifier.ToString());
+                //xmlNode.AppendAttribute("dc", viewModel.InformationHeader.SpellSaveDc.ToString());
                 xmlNode.AppendAttribute("source", spellcastingInformation.ElementHeader.Id);
                 XmlNode parentNode = xmlNode.AppendChild(_document.CreateElement("slots"));
                 Dictionary<string, string> attributesDictionary = new Dictionary<string, string>
             {
-                {
-                    "s1",
-                    viewModel.InformationHeader.Slot1.ToString()
-                },
-                {
-                    "s2",
-                    viewModel.InformationHeader.Slot2.ToString()
-                },
-                {
-                    "s3",
-                    viewModel.InformationHeader.Slot3.ToString()
-                },
-                {
-                    "s4",
-                    viewModel.InformationHeader.Slot4.ToString()
-                },
-                {
-                    "s5",
-                    viewModel.InformationHeader.Slot5.ToString()
-                },
-                {
-                    "s6",
-                    viewModel.InformationHeader.Slot6.ToString()
-                },
-                {
-                    "s7",
-                    viewModel.InformationHeader.Slot7.ToString()
-                },
-                {
-                    "s8",
-                    viewModel.InformationHeader.Slot8.ToString()
-                },
-                {
-                    "s9",
-                    viewModel.InformationHeader.Slot9.ToString()
-                }
+                //{
+                //    "s1",
+                //    viewModel.InformationHeader.Slot1.ToString()
+                //},
+                //{
+                //    "s2",
+                //    viewModel.InformationHeader.Slot2.ToString()
+                //},
+                //{
+                //    "s3",
+                //    viewModel.InformationHeader.Slot3.ToString()
+                //},
+                //{
+                //    "s4",
+                //    viewModel.InformationHeader.Slot4.ToString()
+                //},
+                //{
+                //    "s5",
+                //    viewModel.InformationHeader.Slot5.ToString()
+                //},
+                //{
+                //    "s6",
+                //    viewModel.InformationHeader.Slot6.ToString()
+                //},
+                //{
+                //    "s7",
+                //    viewModel.InformationHeader.Slot7.ToString()
+                //},
+                //{
+                //    "s8",
+                //    viewModel.InformationHeader.Slot8.ToString()
+                //},
+                //{
+                //    "s9",
+                //    viewModel.InformationHeader.Slot9.ToString()
+                //}
             };
                 parentNode.AppendAttributes(attributesDictionary);
                 XmlNode xmlNode2 = xmlNode.AppendChild(_document.CreateElement("cantrips"));
                 XmlNode xmlNode3 = xmlNode.AppendChild(_document.CreateElement("spells"));
-                foreach (SelectionElement item in from x in viewModel.KnownSpells
-                                                  orderby x.IsChosen descending, x.Element.AsElement<Spell>().Level, x.Element.Name
-                                                  select x)
+                //foreach (SelectionElement item in from x in viewModel.KnownSpells
+                //                                  orderby x.IsChosen descending, x.Element.AsElement<Spell>().Level, x.Element.Name
+                //                                  select x)
                 {
-                    bool flag = list.Remove(item.Element);
-                    Spell spell = item.Element.AsElement<Spell>();
+                    //bool flag = list.Remove(item.Element);
+                    //Spell spell = item.Element.AsElement<Spell>();
                     XmlElement xmlElement2 = _document.CreateElement("spell");
-                    xmlElement2.AppendAttribute("name", spell.Name);
-                    xmlElement2.AppendAttribute("level", spell.Level.ToString());
-                    xmlElement2.AppendAttribute("id", spell.Id);
-                    if (spell.Level == 0)
-                    {
-                        xmlNode2.AppendChild(xmlElement2);
-                        continue;
-                    }
-                    if (viewModel.IsPrepareSpellsRequired)
-                    {
-                        bool isChosen = viewModel.PreparedSpells.Contains(item.Element);
-                        if (!item.IsChosen)
-                        {
-                            item.IsChosen = isChosen;
-                        }
-                        if (item.IsChosen)
-                        {
-                            xmlElement2.AppendAttribute("prepared", item.IsChosen ? "true" : "false");
-                        }
-                        if (flag)
-                        {
-                            xmlElement2.AppendAttribute("always-prepared", "true");
-                        }
-                    }
-                    if (flag)
-                    {
-                        xmlElement2.AppendAttribute("known", "true");
-                    }
+                    //xmlElement2.AppendAttribute("name", spell.Name);
+                    //xmlElement2.AppendAttribute("level", spell.Level.ToString());
+                    //xmlElement2.AppendAttribute("id", spell.Id);
+                    //if (spell.Level == 0)
+                    //{
+                    //    xmlNode2.AppendChild(xmlElement2);
+                    //    continue;
+                    //}
+                    //if (viewModel.IsPrepareSpellsRequired)
+                    //{
+                    //    bool isChosen = viewModel.PreparedSpells.Contains(item.Element);
+                    //    if (!item.IsChosen)
+                    //    {
+                    //        item.IsChosen = isChosen;
+                    //    }
+                    //    if (item.IsChosen)
+                    //    {
+                    //        xmlElement2.AppendAttribute("prepared", item.IsChosen ? "true" : "false");
+                    //    }
+                    //    if (flag)
+                    //    {
+                    //        xmlElement2.AppendAttribute("always-prepared", "true");
+                    //    }
+                    //}
+                    //if (flag)
+                    //{
+                    //    xmlElement2.AppendAttribute("known", "true");
+                    //}
                     xmlNode3.AppendChild(xmlElement2);
                 }
             }

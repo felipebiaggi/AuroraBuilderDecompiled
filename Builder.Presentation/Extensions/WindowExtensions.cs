@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Builder.Presentation.ViewModels.Base;
 
 namespace Builder.Presentation.Extensions
 {

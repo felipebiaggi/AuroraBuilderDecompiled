@@ -1,9 +1,4 @@
-﻿using Builder.Core.Events;
-using Builder.Core.Logging;
-using Builder.Presentation.Events.Shell;
-using Builder.Presentation.Properties;
-using MahApps.Metro;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -12,12 +7,21 @@ using System.IO;
 using System.Net;
 using System.Windows;
 using System.Windows.Media;
+using Builder.Core.Events;
+using Builder.Core.Logging;
+using Builder.Presentation;
+using Builder.Presentation.Events.Shell;
+using Builder.Presentation.Properties;
+using Builder.Presentation.Services;
+using Builder.Presentation.Telemetry;
+//using Builder.Presentation.Views.Development;
+using MahApps.Metro;
 
 namespace Builder.Presentation
 {
     public sealed class ApplicationManager
     {
-        private DiagnosticsWindow _diagnosticsWindow;
+        //private DiagnosticsWindow _diagnosticsWindow;
 
         public static ApplicationManager Current { get; } = new ApplicationManager();
 
@@ -282,19 +286,19 @@ namespace Builder.Presentation
 
         public void InitializeDiagnosticsWindow()
         {
-            if (_diagnosticsWindow == null)
-            {
-                _diagnosticsWindow = new DiagnosticsWindow();
-            }
+            //if (_diagnosticsWindow == null)
+            //{
+            //    _diagnosticsWindow = new DiagnosticsWindow();
+            //}
         }
 
         public void ShowDiagnosticsWindow()
         {
-            if (_diagnosticsWindow == null)
-            {
-                _diagnosticsWindow = new DiagnosticsWindow();
-            }
-            _diagnosticsWindow.Show();
+            //if (_diagnosticsWindow == null)
+            //{
+            //    _diagnosticsWindow = new DiagnosticsWindow();
+            //}
+            //_diagnosticsWindow.Show();
         }
 
         [Obsolete("legacy - not used")]

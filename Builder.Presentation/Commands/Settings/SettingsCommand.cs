@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Input;
+using Builder.Presentation.Properties;
+
 
 namespace Builder.Presentation.Commands.Settings
 {
     internal abstract class SettingsCommand : ICommand
     {
-        protected Settings Settings { get; }
+        protected Properties.Settings Settings { get; }
 
         public event EventHandler CanExecuteChanged
         {
@@ -21,7 +23,7 @@ namespace Builder.Presentation.Commands.Settings
 
         protected SettingsCommand()
         {
-            Settings = Settings.Default;
+            Settings = Properties.Settings.Default;
         }
 
         public abstract bool CanExecute(object parameter);

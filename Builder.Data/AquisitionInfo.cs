@@ -20,6 +20,12 @@ namespace Builder.Data
             WasSelected = true;
         }
 
+        public void SelectedBy(SelectRule rule)
+        {
+            SelectRule = rule;
+            WasSelected = true;
+        }
+
         public void Clear()
         {
             WasGranted = false;

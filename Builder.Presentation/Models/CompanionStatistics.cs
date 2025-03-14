@@ -1,5 +1,7 @@
 ﻿using Builder.Core;
 using Builder.Data.Strings;
+using Builder.Presentation.Models;
+using Builder.Presentation.Services.Calculator;
 
 namespace Builder.Presentation.Models
 {

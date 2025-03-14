@@ -1,4 +1,12 @@
 ﻿using Builder.Core;
+using Builder.Presentation.Models;
+using Builder.Presentation.Models.Collections;
+using Builder.Presentation.Models.Equipment;
+using Builder.Presentation.Models.Helpers;
+using Builder.Presentation.Models.NewFolder1;
+// using Builder.Presentation.UserControls.Spellcasting;
+using Builder.Presentation.ViewModels.Shell.Manage;
+
 
 namespace Builder.Presentation.Models
 {
@@ -464,7 +472,7 @@ namespace Builder.Presentation.Models
             }
         }
 
-        public SpellcastingSectionSlots MulticlassSpellSlots { get; } = new SpellcastingSectionSlots();
+           //public SpellcastingSectionSlots MulticlassSpellSlots { get; } = new SpellcastingSectionSlots();
 
         public string Notes1
         {
@@ -548,7 +556,7 @@ namespace Builder.Presentation.Models
             ConditionalArmorClassField.Clear(clearOriginalContent: true);
             ConditionalSavingThrowsField.Clear(clearOriginalContent: true);
             MulticlassSpellcasterLevel = 0;
-            MulticlassSpellSlots.Clear();
+            // MulticlassSpellSlots.Clear();
             Companion.Reset();
             Notes1 = "";
             Notes2 = "";

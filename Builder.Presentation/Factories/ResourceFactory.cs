@@ -1,4 +1,6 @@
-﻿namespace Builder.Presentation.Factories
+﻿using Builder.Presentation.Models.CharacterSheet;
+
+namespace Builder.Presentation.Factories
 {
     public static class ResourceFactory
     {

@@ -59,5 +59,95 @@ namespace Builder.Presentation.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/aurorabuilder/elements/master/core.index.
+        /// </summary>
+        internal static string AdditionalContentCoreUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentCoreUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/aurorabuilder/elements/master/homebrew.index.
+        /// </summary>
+        internal static string AdditionalContentHomebrewUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentHomebrewUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/community-elements/elements-reddit/master/reddit.index.
+        /// </summary>
+        internal static string AdditionalContentRedditUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentRedditUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements.index.
+        /// </summary>
+        internal static string AdditionalContentSupplementsUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentSupplementsUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party.index.
+        /// </summary>
+        internal static string AdditionalContentThirdPartyUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentThirdPartyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/aurorabuilder/elements/master/unearthed-arcana.index.
+        /// </summary>
+        internal static string AdditionalContentUnearthedArcanaUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentUnearthedArcanaUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/community-elements/elements-dndwiki/master/dndwiki.index.
+        /// </summary>
+        internal static string AdditionalContentWikiUrl {
+            get {
+                return ResourceManager.GetString("AdditionalContentWikiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aurora Builder.
+        /// </summary>
+        internal static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.0.0.0.
+        /// </summary>
+        internal static string ApplicationVersion {
+            get {
+                return ResourceManager.GetString("ApplicationVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to foo.
+        /// </summary>
+        internal static string ApplicationVersionUrl {
+            get {
+                return ResourceManager.GetString("ApplicationVersionUrl", resourceCulture);
+            }
+        }
     }
 }

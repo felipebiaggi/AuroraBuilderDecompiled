@@ -17,6 +17,21 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,8 +71,8 @@
     <Reference Include="HtmlRenderer.WPF, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlRenderer.WPF.1.5.0.6\lib\net45\HtmlRenderer.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=1.6.1.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.1\lib\net45\MahApps.Metro.dll</HintPath>
@@ -127,6 +142,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationManager.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="CharacterContentOrganizer.cs" />
+    <Compile Include="CharacterManager.cs" />
+    <Compile Include="CharacterOptionsManager.cs" />
+    <Compile Include="CharacterStatus.cs" />
+    <Compile Include="CharacterStatusChangedEventArgs.cs" />
     <Compile Include="Commands\ApplicationCommandManager.cs" />
     <Compile Include="Commands\ApplicationCommands.cs" />
     <Compile Include="Commands\ApplyRestrictionsCommand.cs" />
@@ -139,6 +160,8 @@
     <Compile Include="Commands\Settings\ActivateLightThemeCommand.cs" />
     <Compile Include="Commands\Settings\SettingsCommand.cs" />
     <Compile Include="Commands\SourceApplicationCommands.cs" />
+    <Compile Include="ContentBuilder.cs" />
+    <Compile Include="ContentGenerator.cs" />
     <Compile Include="Controls\AngleToIsLargeConverter.cs" />
     <Compile Include="Controls\AngleToPointConverter.cs" />
     <Compile Include="Controls\AuroraExpander.cs" />
@@ -151,26 +174,29 @@
     <Compile Include="Controls\PortraitSizeToScaleValueConverter.cs" />
     <Compile Include="Controls\PortraitSizeToStrokeValueConverter.cs" />
     <Compile Include="Controls\SliderTitleBlock.cs" />
-    <Compile Include="Converter\ElementProficiencyBrushValueConvereter.cs" />
-    <Compile Include="Converter\ElementProficiencyValueConvereter.cs" />
-    <Compile Include="Converter\InventoryEquipmentItemUnderlineVisibilityConverter.cs" />
-    <Compile Include="Converter\InvertedThemeColorConverter.cs" />
-    <Compile Include="Converter\InverterBooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\IsExpertiseAbilityConverter.cs" />
-    <Compile Include="Converter\IsExpertiseVisibilityConverter.cs" />
-    <Compile Include="Converter\IsProficientAbilityConverter.cs" />
-    <Compile Include="Converter\IsSpellReplacedValueConverter.cs" />
-    <Compile Include="Converter\ItemCostValueConverter.cs" />
-    <Compile Include="Converter\LocalImageSourceConverter.cs" />
-    <Compile Include="Converter\NullableInvertedBooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\PortraitImageSourceConverter.cs" />
-    <Compile Include="Converter\RevisedDateValueConverter.cs" />
-    <Compile Include="Converter\SourceListingNameReplaceConverter.cs" />
-    <Compile Include="Converter\SuccessColorBrushConverter.cs" />
-    <Compile Include="Converter\SymbolGalleryImageSourceConverter.cs" />
-    <Compile Include="Converter\ThemeColorConverter.cs" />
+    <Compile Include="Converters\ElementProficiencyBrushValueConvereter.cs" />
+    <Compile Include="Converters\ElementProficiencyValueConvereter.cs" />
+    <Compile Include="Converters\InventoryEquipmentItemUnderlineVisibilityConverter.cs" />
+    <Compile Include="Converters\InvertedThemeColorConverter.cs" />
+    <Compile Include="Converters\InverterBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsExpertiseAbilityConverter.cs" />
+    <Compile Include="Converters\IsExpertiseVisibilityConverter.cs" />
+    <Compile Include="Converters\IsProficientAbilityConverter.cs" />
+    <Compile Include="Converters\IsSpellReplacedValueConverter.cs" />
+    <Compile Include="Converters\ItemCostValueConverter.cs" />
+    <Compile Include="Converters\LocalImageSourceConverter.cs" />
+    <Compile Include="Converters\NullableInvertedBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\PortraitImageSourceConverter.cs" />
+    <Compile Include="Converters\RevisedDateValueConverter.cs" />
+    <Compile Include="Converters\SourceListingNameReplaceConverter.cs" />
+    <Compile Include="Converters\SuccessColorBrushConverter.cs" />
+    <Compile Include="Converters\SymbolGalleryImageSourceConverter.cs" />
+    <Compile Include="Converters\ThemeColorConverter.cs" />
     <Compile Include="Data\DesignData.cs" />
     <Compile Include="Documents\ExportContentGenerator.cs" />
+    <Compile Include="ElementContainer.cs" />
+    <Compile Include="ElementsOrganizer.cs" />
+    <Compile Include="ElementsOrganizerRefactored.cs" />
     <Compile Include="Elements\ElementCollectionEventArgs.cs" />
     <Compile Include="Elements\ISourceRestrictionsProvider.cs" />
     <Compile Include="Elements\SelectionCollectionService.cs" />
@@ -225,14 +251,207 @@
     <Compile Include="Logging\EventLogger.cs" />
     <Compile Include="Logging\FileLogger.cs" />
     <Compile Include="Models\AbilityItem.cs" />
+    <Compile Include="Models\Campaign\Campaign.cs" />
+    <Compile Include="Models\Campaign\RestrictedSourcesLoadRequest.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharacterFile.cs" />
+    <Compile Include="Models\CharacterSheet\CharacterSheetEx.cs" />
+    <Compile Include="Models\CharacterSheet\CharacterSheetResourcePage.cs" />
+    <Compile Include="Models\CharacterSheet\CharacterSheetResources.cs" />
+    <Compile Include="Models\CharacterSheet\Content\CharacterSheetExportContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\CharacterSheetSpellcastingPageExportContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\DetailsSheetContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\MainSheetContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\SpellcastingSheetContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\SpellcastingSpellContent.cs" />
+    <Compile Include="Models\CharacterSheet\Content\SpellcastingSpellsContent.cs" />
+    <Compile Include="Models\CharacterSheet\FillableContentGenerator.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\CardPageGenerator.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\AreaContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\AttackCardContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\ContentBuilder.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\GenericCardContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\IPageContentItem.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\IPageContentWriter.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\LineContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\PageContentItem.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\Content\SpellCardContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\DetailsPageGenerator.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\GenericCardContent.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\PageGenerator.cs" />
+    <Compile Include="Models\CharacterSheet\Pages\SpellcastingPageGenerator.cs" />
+    <Compile Include="Models\CharacterSheet\PDF\FontsHelper.cs" />
+    <Compile Include="Models\Collections\AbilitiesCollection.cs" />
+    <Compile Include="Models\Collections\SavingThrowCollection.cs" />
+    <Compile Include="Models\Collections\SkillsCollection.cs" />
     <Compile Include="Models\Companion.cs" />
     <Compile Include="Models\CompanionStatistics.cs" />
+    <Compile Include="Models\Equipment\CharacterInventory.cs" />
+    <Compile Include="Models\Equipment\Coinage.cs" />
+    <Compile Include="Models\Equipment\EquipmentItem.cs" />
+    <Compile Include="Models\Equipment\EquipmentItemCollection.cs" />
+    <Compile Include="Models\Equipment\InventoryStorage.cs" />
+    <Compile Include="Models\Equipment\InventoryWeight.cs" />
+    <Compile Include="Models\Helpers\AttackSectionItem.cs" />
+    <Compile Include="Models\Helpers\AttacksSection.cs" />
+    <Compile Include="Models\Helpers\Progress.cs" />
+    <Compile Include="Models\NewFolder1\FillableBackgroundCharacteristics.cs" />
+    <Compile Include="Models\NewFolder1\FillableField.cs" />
     <Compile Include="Models\SavingThrowItem.cs" />
+    <Compile Include="Models\Sheet\CardPosition.cs" />
+    <Compile Include="Models\Sheet\CharacterSheetInfo.cs" />
+    <Compile Include="Models\Sheet\ContentArea.cs" />
+    <Compile Include="Models\Sheet\ContentField.cs" />
+    <Compile Include="Models\Sheet\ContentLine.cs" />
+    <Compile Include="Models\Sheet\DetailsSheetInfo.cs" />
+    <Compile Include="Models\Sheet\Field.cs" />
+    <Compile Include="Models\Sheet\Itemcard.cs" />
+    <Compile Include="Models\Sheet\SkillField.cs" />
+    <Compile Include="Models\Sheet\Spellcard.cs" />
+    <Compile Include="Models\Sheet\SpellcastingSheetInfo.cs" />
+    <Compile Include="Models\Sheet\SpellField.cs" />
     <Compile Include="Models\SkillItem.cs" />
     <Compile Include="Models\StatisticsBase.cs" />
+    <Compile Include="ReprocessCharacterEvent.cs" />
+    <Compile Include="Services\Calculator\StatisticsCalculatedResult.cs" />
+    <Compile Include="Services\Calculator\StatisticsHandler2.cs" />
+    <Compile Include="Services\Calculator\StatisticValuesGroup.cs" />
+    <Compile Include="Services\Calculator\StatisticValuesGroupCollection.cs" />
+    <Compile Include="Services\CharacterSheetGenerator.cs" />
+    <Compile Include="Services\ClassProgressionManager.cs" />
     <Compile Include="Services\Data\DataManager.cs" />
+    <Compile Include="Services\Data\ElementsCollectionPopulatedEvent.cs" />
+    <Compile Include="Services\Data\InternalElementsGenerator.cs" />
+    <Compile Include="Services\Data\SpellScrollContentGenerator.cs" />
+    <Compile Include="Services\DiceService.cs" />
+    <Compile Include="Services\DynamicExpressionConverter.cs" />
+    <Compile Include="Services\ExpressionInterpreter.cs" />
+    <Compile Include="Services\HitDiceHelper.cs" />
+    <Compile Include="Services\IExpressionConverter.cs" />
+    <Compile Include="Services\IExpressionDataProvider.cs" />
+    <Compile Include="Services\IExpressionInterpreter.cs" />
+    <Compile Include="Services\ListSelectionRuleRegisteredEvent.cs" />
+    <Compile Include="Services\ListSelectionRuleUnregisteredEvent.cs" />
+    <Compile Include="Services\MessageDialogService.cs" />
+    <Compile Include="Services\NavigationLocation.cs" />
+    <Compile Include="Services\NavigationServiceEvaluationEvent.cs" />
+    <Compile Include="Services\ProgressionManager.cs" />
+    <Compile Include="Services\QuickBar\Commands\Base\QuickBarCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\Base\QuickBarDiceCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\BundleCommandEvent.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickBarBundleCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickBarCustomCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickBarDiagnosticsCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickBarFetchCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickBarPortraitsCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickSearchDataCommand.cs" />
+    <Compile Include="Services\QuickBar\Commands\QuickSearchLogsCommand.cs" />
+    <Compile Include="Services\SelectionRuleCollectionService.cs" />
+    <Compile Include="Services\SelectionRuleEventArgs.cs" />
+    <Compile Include="Services\SelectionRuleExpanderHandler.cs" />
+    <Compile Include="Services\SelectionRuleNavigationArgs.cs" />
+    <Compile Include="Services\SelectionRuleNavigationService.cs" />
+    <Compile Include="Services\Sources\SourcesManager.cs" />
+    <Compile Include="Services\SpeechService.cs" />
+    <Compile Include="Services\SpellcastingSectionHandler.cs" />
+    <Compile Include="Syndication\Posts\Feed.cs" />
+    <Compile Include="Syndication\Posts\Post.cs" />
+    <Compile Include="Syndication\Posts\PostMeta.cs" />
+    <Compile Include="Syndication\SyndicationService.cs" />
+    <Compile Include="Syndication\SyndicationUpdateProgressEventArgs.cs" />
+    <Compile Include="Syndication\SyndicationUpdateResultEventArgs.cs" />
+    <Compile Include="Telemetry\AnalyticsErrorHelper.cs" />
+    <Compile Include="Telemetry\AnalyticsEventHelper.cs" />
+    <Compile Include="UserControls\AbilitiesContent.xaml.cs">
+      <DependentUpon>AbilitiesContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\CharacterFileVerification.cs" />
+    <Compile Include="Utilities\Crc32.cs" />
+    <Compile Include="Utilities\ElementDescriptionGenerator.cs" />
+    <Compile Include="Utilities\GalleryUtilities.cs" />
+    <Compile Include="ViewModels\Base\ElementsViewModelBase.cs" />
+    <Compile Include="ViewModels\Base\InitializationArguments.cs" />
+    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModels\BuildElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\CampaignManagerViewModel.cs" />
+    <Compile Include="ViewModels\CompendiumElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\CompendiumElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\ContentItem.cs" />
+    <Compile Include="ViewModels\ContentManagerViewModel.cs" />
+    <Compile Include="ViewModels\ContentSize.cs" />
+    <Compile Include="ViewModels\Content\AbilitiesContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\AbilitiesGenerationOption.cs" />
+    <Compile Include="ViewModels\Content\AbilityScoreImprovementContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\AdditionalStatisticsPanelContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\AlignmentContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\BackgroundContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\ClassContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\CompanionAbilitiesContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\CompanionAdditionalStatisticsPanelContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\CompanionContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\CompanionSkillsContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\CompanionTraitsPanelContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\ConditionsPanelContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\DeityContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\FeatContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\LanguageContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\ProficiencyContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\RaceContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\SavingThrowsContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\SkillsContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\SpellCompendiumContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\SpellsContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\SpellsPanelContentViewModel.cs" />
+    <Compile Include="ViewModels\Content\StatisticsPanelItem.cs" />
+    <Compile Include="ViewModels\DescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\DescriptionPanelViewModelBase.cs" />
+    <Compile Include="ViewModels\Development\DeveloperToolsCreateViewModel.cs" />
+    <Compile Include="ViewModels\Development\DeveloperToolsWindowViewModel.cs" />
+    <Compile Include="ViewModels\Development\DeveloperWindowCharacterDataViewModel.cs" />
+    <Compile Include="ViewModels\Development\DeveloperWindowDataViewModel.cs" />
+    <Compile Include="ViewModels\Development\DeveloperWindowGenerateViewModel.cs" />
+    <Compile Include="ViewModels\Development\DeveloperWindowViewModel.cs" />
+    <Compile Include="ViewModels\Development\GenerationElement.cs" />
+    <Compile Include="ViewModels\DynamicSupportExpressions.cs" />
+    <Compile Include="ViewModels\ElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\EquipmentElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\EquipmentElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\HtmlDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\LauncherWindowViewModel.cs" />
+    <Compile Include="ViewModels\ListItemSelectionRuleExpanderViewModel.cs" />
+    <Compile Include="ViewModels\NotificationElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\NotificationElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\SaveCharacterWindowViewModel.cs" />
+    <Compile Include="ViewModels\SelectionElement.cs" />
+    <Compile Include="ViewModels\SelectionElementCollection.cs" />
+    <Compile Include="ViewModels\SelectionItem.cs" />
+    <Compile Include="ViewModels\SelectionRuleComboBoxViewModel.cs" />
+    <Compile Include="ViewModels\SelectionRuleExpanderViewModel.cs" />
+    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
+    <Compile Include="ViewModels\Shell\CharacterCollectionSectionViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Items\EquipmentCategory.cs" />
+    <Compile Include="ViewModels\Shell\Items\EquipmentContentViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Items\EquipmentItemSlots.cs" />
+    <Compile Include="ViewModels\Shell\Items\ItemsSectionViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Items\RefactoredEquipmentItem.cs" />
+    <Compile Include="ViewModels\Shell\Items\RefactoredEquipmentSectionViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Manage\ManageAttacksViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Manage\ManageContentViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Manage\ObservableSpell.cs" />
+    <Compile Include="ViewModels\Shell\Manage\SpellcastingCollection.cs" />
+    <Compile Include="ViewModels\Shell\Manage\SpellContentViewModel.cs" />
+    <Compile Include="ViewModels\Shell\ShellWindowViewModel.cs" />
+    <Compile Include="ViewModels\Shell\StartSectionViewModel.cs" />
+    <Compile Include="ViewModels\Shell\Start\IndexDownloadRequestEvent.cs" />
+    <Compile Include="ViewModels\Shell\Start\SourcesSectionViewModel.cs" />
+    <Compile Include="ViewModels\SourceElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\SourceElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\SpellcastingElementDescriptionDisplayRequestEvent.cs" />
+    <Compile Include="ViewModels\SpellcastingElementDescriptionPanelViewModel.cs" />
+    <Compile Include="ViewModels\SupportExpanderViewModel.cs" />
+    <Compile Include="Views\QuickSearchBarEventArgs.cs" />
+    <Compile Include="Views\Sliders\ShowSliderEvent.cs" />
+    <Compile Include="Views\Sliders\Slider.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -241,18 +460,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Converter\AccentColorConverter.cs" />
-    <Compile Include="Converter\AccentNameConverter.cs" />
-    <Compile Include="Converter\AvailablePointsValueConverter.cs" />
-    <Compile Include="Converter\BonusStringValueConverter.cs" />
-    <Compile Include="Converter\BooleanToSolidColorBrushConverter.cs" />
-    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\CampaignSourceConverter.cs" />
-    <Compile Include="Converter\CompanionGalleryImageSourceConverter.cs" />
+    <Compile Include="Converters\AccentColorConverter.cs" />
+    <Compile Include="Converters\AccentNameConverter.cs" />
+    <Compile Include="Converters\AvailablePointsValueConverter.cs" />
+    <Compile Include="Converters\BonusStringValueConverter.cs" />
+    <Compile Include="Converters\BooleanToSolidColorBrushConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\CampaignSourceConverter.cs" />
+    <Compile Include="Converters\CompanionGalleryImageSourceConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\AbilitiesContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Sources\SourceItem.cs" />
@@ -306,8 +529,13 @@
     <Folder Include="Resources\" />
     <Folder Include="Styles\" />
     <Folder Include="Themes\" />
-    <Folder Include="UserControl\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
