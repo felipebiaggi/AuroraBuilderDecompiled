@@ -1,7 +1,5 @@
-﻿using System.Windows.Input;
-using Builder.Core.Events;
-using Builder.Presentation;
-using Builder.Presentation.Commands;
+﻿using Builder.Core.Events;
+using System.Windows.Input;
 
 namespace Builder.Presentation.Commands
 {

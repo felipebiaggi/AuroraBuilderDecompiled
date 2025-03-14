@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Builder.Presentation.Models.Sources;
+using System;
 using System.Globalization;
 using System.Windows.Data;
-using Builder.Presentation.Models.Sources;
 
 namespace Builder.Presentation.Converter
 {

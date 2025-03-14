@@ -1,7 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text;
+using System;
 using System.IO;
-using Aurora.Documents.Writers;
-using iTextSharp.text;
 
 namespace Aurora.Documents.Writers
 {

@@ -1,6 +1,4 @@
-﻿using iTextSharp.text.pdf;
-
-namespace Builder.Presentation.Extensions
+﻿namespace Builder.Presentation.Extensions
 {
     public static class PdfExtensions
     {

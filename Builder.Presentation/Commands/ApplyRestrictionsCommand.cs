@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System;
 using System.Windows.Input;
-using Builder.Presentation;
-using Builder.Presentation.Services.Sources;
 
 namespace Builder.Presentation.Commands
 {

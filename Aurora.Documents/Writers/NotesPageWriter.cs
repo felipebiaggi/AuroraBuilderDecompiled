@@ -1,13 +1,10 @@
 ﻿using Aurora.Documents.ExportContent.Notes;
 using Aurora.Documents.Sheets;
+using Aurora.Documents.Writers.Base;
 using iTextSharp.text.pdf;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Aurora.Documents.Writers.Base;
 
 namespace Aurora.Documents.Writers
 {

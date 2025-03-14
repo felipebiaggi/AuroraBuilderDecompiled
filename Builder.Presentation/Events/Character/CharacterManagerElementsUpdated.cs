@@ -1,6 +1,4 @@
 ﻿using Builder.Data;
-using Builder.Presentation.Events;
-using Builder.Presentation.Events.Character;
 
 namespace Builder.Presentation.Events.Character
 {

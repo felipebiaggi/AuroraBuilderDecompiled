@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using Builder.Presentation.Properties;
 
 namespace Builder.Presentation.Commands.Settings
 {

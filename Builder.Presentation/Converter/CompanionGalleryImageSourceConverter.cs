@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Builder.Core.Logging;
+using Builder.Presentation.Services.Data;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using Builder.Core.Logging;
-using Builder.Presentation.Services.Data;
 
 namespace Builder.Presentation.Converter
 {

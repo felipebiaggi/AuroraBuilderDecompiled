@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Builder.Data.Elements;
+using System;
 using System.Globalization;
 using System.Windows.Data;
-using Builder.Data.Elements;
 
 namespace Builder.Presentation.Converter
 {

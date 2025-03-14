@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Builder.Core.Logging;
+using System;
 using System.IO;
-using Builder.Core.Logging;
 
 namespace Builder.Presentation.Logging
 {

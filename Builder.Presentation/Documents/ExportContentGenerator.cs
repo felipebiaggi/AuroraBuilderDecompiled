@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using Aurora.Documents.ExportContent;
+﻿using Aurora.Documents.ExportContent;
 using Aurora.Documents.ExportContent.Equipment;
 using Aurora.Documents.ExportContent.Notes;
 using Aurora.Documents.Sheets;
 using Builder.Core.Logging;
 using Builder.Data;
 using Builder.Data.Strings;
-using Builder.Presentation;
-using Builder.Presentation.Models.Equipment;
-using Builder.Presentation.ViewModels.Shell.Items;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Builder.Presentation.Documents
 {

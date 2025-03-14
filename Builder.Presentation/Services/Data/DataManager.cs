@@ -1,4 +1,16 @@
-﻿using System;
+﻿using Builder.Core.Events;
+using Builder.Core.Logging;
+using Builder.Data;
+using Builder.Data.Elements;
+using Builder.Data.Extensions;
+using Builder.Data.Files;
+using Builder.Data.Rules;
+using Builder.Data.Strings;
+using Builder.Presentation.Events.Data;
+using Builder.Presentation.Logging;
+using Builder.Presentation.Models;
+using Builder.Presentation.Properties;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,21 +20,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Builder.Core.Events;
-using Builder.Core.Logging;
-using Builder.Data;
-using Builder.Data.Elements;
-using Builder.Data.Extensions;
-using Builder.Data.Files;
-using Builder.Data.Rules;
-using Builder.Data.Strings;
-using Builder.Presentation;
-using Builder.Presentation.Events.Data;
-using Builder.Presentation.Logging;
-using Builder.Presentation.Models;
-using Builder.Presentation.Properties;
-using Builder.Presentation.Services;
-using Builder.Presentation.Services.Data;
 
 namespace Builder.Presentation.Services.Data
 {

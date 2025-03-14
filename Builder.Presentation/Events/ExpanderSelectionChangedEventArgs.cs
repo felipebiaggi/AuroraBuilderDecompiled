@@ -1,10 +1,5 @@
-﻿using Builder.Data.Rules;
-using Builder.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Builder.Data;
+using Builder.Data.Rules;
 
 namespace Builder.Presentation.Events
 {

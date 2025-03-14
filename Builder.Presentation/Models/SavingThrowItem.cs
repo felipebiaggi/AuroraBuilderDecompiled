@@ -1,6 +1,5 @@
-﻿using System.ComponentModel;
-using Builder.Core;
-using Builder.Presentation.Models;
+﻿using Builder.Core;
+using System.ComponentModel;
 
 namespace Builder.Presentation.Models
 {

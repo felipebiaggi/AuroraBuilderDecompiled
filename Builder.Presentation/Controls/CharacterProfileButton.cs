@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Builder.Core.Logging;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Builder.Core.Logging;
-using Builder.Presentation.Controls;
 
 namespace Builder.Presentation.Controls
 {

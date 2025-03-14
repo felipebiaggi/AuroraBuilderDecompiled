@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Builder.Presentation.Models.Sources;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
-using Builder.Presentation.Models.Sources;
 
 namespace Builder.Presentation.Converter
 {

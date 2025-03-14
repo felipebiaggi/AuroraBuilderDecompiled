@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Builder.Data.Elements;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
-using Builder.Data;
-using Builder.Data.Elements;
-using Builder.Presentation;
 
 namespace Builder.Presentation.Converter
 {

@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Aurora.Documents.Writers;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Aurora.Documents.Writers;
-using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
 
 namespace Aurora.Documents.Helpers
 {

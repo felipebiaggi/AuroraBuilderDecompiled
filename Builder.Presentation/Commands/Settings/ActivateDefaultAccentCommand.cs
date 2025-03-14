@@ -1,6 +1,5 @@
-﻿using System.Windows;
-using Builder.Presentation.Commands.Settings;
-using MahApps.Metro;
+﻿using MahApps.Metro;
+using System.Windows;
 
 namespace Builder.Presentation.Commands.Settings
 {

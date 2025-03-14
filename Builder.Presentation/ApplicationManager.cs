@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Builder.Core.Events;
+using Builder.Core.Logging;
+using Builder.Presentation.Events.Shell;
+using Builder.Presentation.Properties;
+using MahApps.Metro;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -7,15 +12,6 @@ using System.IO;
 using System.Net;
 using System.Windows;
 using System.Windows.Media;
-using Builder.Core.Events;
-using Builder.Core.Logging;
-using Builder.Presentation;
-using Builder.Presentation.Events.Shell;
-using Builder.Presentation.Properties;
-using Builder.Presentation.Services;
-using Builder.Presentation.Telemetry;
-using Builder.Presentation.Views.Development;
-using MahApps.Metro;
 
 namespace Builder.Presentation
 {

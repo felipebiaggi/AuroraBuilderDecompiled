@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Builder.Presentation.Models;
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using Builder.Presentation.Models;
 
 namespace Builder.Presentation.Converter
 {

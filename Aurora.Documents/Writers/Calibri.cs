@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aurora.Documents.Writers
+﻿namespace Aurora.Documents.Writers
 {
     public class Calibri : LocalFontBase
     {

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MahApps.Metro;
+using System;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using MahApps.Metro;
 
 namespace Builder.Presentation.Converter
 {

@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Builder.Core;
+using Builder.Core.Logging;
+using Builder.Data;
+using Builder.Presentation.Extensions;
+using Builder.Presentation.Services.Data;
+using Microsoft.Win32;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -7,15 +13,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Xml;
-using Builder.Core;
-using Builder.Core.Logging;
-using Builder.Data;
-using Builder.Presentation.Controls;
-using Builder.Presentation.Extensions;
-using Builder.Presentation.Services;
-using Builder.Presentation.Services.Data;
-using Builder.Presentation.Telemetry;
-using Microsoft.Win32;
 using TheArtOfDev.HtmlRenderer.Core.Entities;
 using TheArtOfDev.HtmlRenderer.WPF;
 

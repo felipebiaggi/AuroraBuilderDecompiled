@@ -1,5 +1,4 @@
-﻿using Builder.Presentation.ViewModels.Base;
-using MahApps.Metro.Controls;
+﻿using MahApps.Metro.Controls;
 
 namespace Builder.Presentation.Extensions
 {

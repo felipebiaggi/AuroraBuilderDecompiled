@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
-using Builder.Presentation.Controls;
 
 namespace Builder.Presentation.Controls
 {

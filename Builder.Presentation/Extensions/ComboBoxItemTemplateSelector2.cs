@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Builder.Presentation.Extensions;
 
 namespace Builder.Presentation.Extensions
 {
