@@ -26,7 +26,7 @@ using Builder.Presentation.Services;
 using Builder.Presentation.Services.Data;
 using Builder.Presentation.Services.Sources;
 using Builder.Presentation.Telemetry;
-using Builder.Presentation.UserControls;
+//using Builder.Presentation.UserControls;
 using Builder.Presentation.ViewModels;
 using Builder.Presentation.ViewModels.Base;
 using Builder.Presentation.ViewModels.Shell.Items;

@@ -362,9 +362,6 @@
     <Compile Include="Syndication\SyndicationUpdateResultEventArgs.cs" />
     <Compile Include="Telemetry\AnalyticsErrorHelper.cs" />
     <Compile Include="Telemetry\AnalyticsEventHelper.cs" />
-    <Compile Include="UserControls\AbilitiesContent.xaml.cs">
-      <DependentUpon>AbilitiesContent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\CharacterFileVerification.cs" />
     <Compile Include="Utilities\Crc32.cs" />
     <Compile Include="Utilities\ElementDescriptionGenerator.cs" />
@@ -449,6 +446,7 @@
     <Compile Include="ViewModels\SpellcastingElementDescriptionDisplayRequestEvent.cs" />
     <Compile Include="ViewModels\SpellcastingElementDescriptionPanelViewModel.cs" />
     <Compile Include="ViewModels\SupportExpanderViewModel.cs" />
+    <Compile Include="Views\Development\Xtensions.cs" />
     <Compile Include="Views\QuickSearchBarEventArgs.cs" />
     <Compile Include="Views\Sliders\ShowSliderEvent.cs" />
     <Compile Include="Views\Sliders\Slider.cs" />
@@ -472,10 +470,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\AbilitiesContent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Sources\SourceItem.cs" />
@@ -529,6 +523,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Styles\" />
     <Folder Include="Themes\" />
+    <Folder Include="UserControls\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

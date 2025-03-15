@@ -147,4 +147,10 @@
   <data name="ApplicationVersionUrl" xml:space="preserve">
     <value>foo</value>
   </data>
+  <data name="AppVersionCheck" xml:space="preserve">
+    <value>1.0.0.0</value>
+  </data>
+  <data name="NotificationUrl" xml:space="preserve">
+    <value>bar</value>
+  </data>
 </root>

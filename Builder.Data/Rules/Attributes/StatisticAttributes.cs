@@ -37,14 +37,14 @@ namespace Builder.Data.Rules.Attributes
 
         public bool HasBonus => !string.IsNullOrWhiteSpace(Type);
 
-        public bool HasEquipamentCondition => !string.IsNullOrWhiteSpace(Equipped);
+        public bool HasEquipmentConditions => !string.IsNullOrWhiteSpace(Equipped);
 
         public bool HasRequirementsConditions => !string.IsNullOrWhiteSpace(Requirements);
 
         [Obsolete]
-        public bool HasNotEquipamentCondition => !string.IsNullOrWhiteSpace(NotEquipped);
+        public bool HasNotEquipmentConditions => !string.IsNullOrWhiteSpace(NotEquipped);
 
-        [Obsolete("use HasMaximum insted of HasCap for new value")]
+        [Obsolete("use HasMaximum instead of HasCap for new value")]
         public bool HasCap => !string.IsNullOrWhiteSpace(Cap);
 
         public bool HasMaximum => !string.IsNullOrWhiteSpace(Cap);
@@ -62,32 +62,27 @@ namespace Builder.Data.Rules.Attributes
         {
             int result;
             return int.TryParse(Value, out result);
-
         }
 
         public int GetValue()
         {
             return Convert.ToInt32(Value);
-
         }
 
-        public bool MeetsLevelRequirements(int level)
+        public bool MeetsLevelRequirement(int level)
         {
             return Level <= level;
-
         }
 
         public bool IsNumberCap()
         {
             int result;
             return int.TryParse(Cap, out result);
-
         }
 
         public int GetCapValue()
         {
             return Convert.ToInt32(Cap);
-
         }
     }
 }

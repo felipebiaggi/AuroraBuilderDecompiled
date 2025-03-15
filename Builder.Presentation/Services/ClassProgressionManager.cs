@@ -1,12 +1,15 @@
-﻿using Builder.Core.Logging;
-using Builder.Data;
-using Builder.Data.Elements;
-using Builder.Data.Rules;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Builder.Core.Logging;
+using Builder.Data;
+using Builder.Data.Elements;
+using Builder.Data.Extensions;
+using Builder.Data.Rules;
+using Builder.Presentation;
+using Builder.Presentation.Services;
 
 namespace Builder.Presentation.Services
 {

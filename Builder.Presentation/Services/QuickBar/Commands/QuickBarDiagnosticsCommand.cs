@@ -11,7 +11,7 @@ namespace Builder.Presentation.Services.QuickBar.Commands
 
         public override void Execute(string parameter)
         {
-            new DiagnosticsWindow().Show();
+            //new DiagnosticsWindow().Show();
         }
     }
 }

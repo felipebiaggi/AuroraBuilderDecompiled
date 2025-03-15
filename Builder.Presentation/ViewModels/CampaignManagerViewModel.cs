@@ -1,14 +1,18 @@
-﻿using Builder.Core;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
+using Builder.Core;
 using Builder.Core.Events;
+using Builder.Presentation;
 using Builder.Presentation.Models.Campaign;
 using Builder.Presentation.Models.Sources;
 using Builder.Presentation.Services.Sources;
 using Builder.Presentation.Telemetry;
+using Builder.Presentation.ViewModels;
 using Builder.Presentation.ViewModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Input;
+using Builder.Presentation.Views;
+using Builder.Presentation.Views.Sliders;
 
 namespace Builder.Presentation.ViewModels
 {
@@ -169,7 +173,7 @@ namespace Builder.Presentation.ViewModels
             {
                 string name = SelectedSourceItem.Source.Name;
                 AnalyticsEventHelper.SourcesCompendiumLookup(name);
-                base.EventAggregator.Send(new CompendiumShowSourceEventArgs(name));
+                //base.EventAggregator.Send(new CompendiumShowSourceEventArgs(name));
                 base.EventAggregator.Send(new ShowSliderEvent(Slider.Compendium));
             }
         }

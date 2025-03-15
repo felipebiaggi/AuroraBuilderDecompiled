@@ -1,8 +1,7 @@
 ﻿using System;
 
 namespace Builder.Data.Rules.Attributes
-{
-    public sealed class GrantAttributes
+{   public sealed class GrantAttributes
     {
         public string Type { get; set; }
 
@@ -13,9 +12,7 @@ namespace Builder.Data.Rules.Attributes
 
         public string Requirements { get; set; }
 
-#pragma warning disable CS0618 // Type or member is obsolete
         public string Id => Name;
-#pragma warning restore CS0618 // Type or member is obsolete
 
         public GrantAttributes()
         {
@@ -27,7 +24,7 @@ namespace Builder.Data.Rules.Attributes
             return !string.IsNullOrWhiteSpace(Requirements);
         }
 
-        public bool MeetsLevelRequirements(int level)
+        public bool MeetsLevelRequirement(int level)
         {
             return RequiredLevel <= level;
         }

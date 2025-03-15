@@ -78,7 +78,7 @@ namespace Builder.Presentation.Services
         private SpellcastingSheetInfo GenerateSpellcastingSheetInfo(SpellcastingInformation information)
         {
             // SpellcasterSelectionControlViewModel spellcasterSectionViewModel = SpellcastingSectionHandler.Current.GetSpellcasterSectionViewModel(information.UniqueIdentifier);
-            IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
+            //IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
             SpellcastingSheetInfo spellcastingSheetInfo = new SpellcastingSheetInfo();
             spellcastingSheetInfo.SpellcastingClass = information.Name;
             spellcastingSheetInfo.SpellcastingAbility = information.AbilityName;
@@ -94,43 +94,43 @@ namespace Builder.Presentation.Services
             //spellcastingSheetInfo.Spells8th.TotalSlots = spellcasterSectionViewModel.InformationHeader.Slot8;
             //spellcastingSheetInfo.Spells9th.TotalSlots = spellcasterSectionViewModel.InformationHeader.Slot9;
             SpellcastingSheetInfo spellcastingSheetInfo2 = spellcastingSheetInfo;
-            foreach (SelectionElement item in spells)
-            {
-                Spell spell = item.Element.AsElement<Spell>();
-                switch (spell.Level)
-                {
-                    case 0:
-                        spellcastingSheetInfo2.Cantrips.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, isPrepared: true));
-                        break;
-                    case 1:
-                        spellcastingSheetInfo2.Spells1st.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 2:
-                        spellcastingSheetInfo2.Spells2nd.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 3:
-                        spellcastingSheetInfo2.Spells3rd.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 4:
-                        spellcastingSheetInfo2.Spells4th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 5:
-                        spellcastingSheetInfo2.Spells5th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 6:
-                        spellcastingSheetInfo2.Spells6th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 7:
-                        spellcastingSheetInfo2.Spells7th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 8:
-                        spellcastingSheetInfo2.Spells8th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                    case 9:
-                        spellcastingSheetInfo2.Spells9th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
-                        break;
-                }
-            }
+            //foreach (SelectionElement item in spells)
+            //{
+            //    Spell spell = item.Element.AsElement<Spell>();
+            //    switch (spell.Level)
+            //    {
+            //        case 0:
+            //            spellcastingSheetInfo2.Cantrips.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, isPrepared: true));
+            //            break;
+            //        case 1:
+            //            spellcastingSheetInfo2.Spells1st.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 2:
+            //            spellcastingSheetInfo2.Spells2nd.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 3:
+            //            spellcastingSheetInfo2.Spells3rd.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 4:
+            //            spellcastingSheetInfo2.Spells4th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 5:
+            //            spellcastingSheetInfo2.Spells5th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 6:
+            //            spellcastingSheetInfo2.Spells6th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 7:
+            //            spellcastingSheetInfo2.Spells7th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 8:
+            //            spellcastingSheetInfo2.Spells8th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //        case 9:
+            //            spellcastingSheetInfo2.Spells9th.Add(new SpellcastingSheetInfo.SpellsContainer.SpellPlaceholder(spell.Name, item.IsChosen));
+            //            break;
+            //    }
+            //}
             return spellcastingSheetInfo2;
         }
 
@@ -594,22 +594,22 @@ namespace Builder.Presentation.Services
 
         private SpellcastingSheetContent GenerateSpellcastingSheetContent(SpellcastingInformation information)
         {
-            SpellcasterSelectionControlViewModel spellcasterSectionViewModel = SpellcastingSectionHandler.Current.GetSpellcasterSectionViewModel(information.UniqueIdentifier);
-            IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
+            //SpellcasterSelectionControlViewModel spellcasterSectionViewModel = SpellcastingSectionHandler.Current.GetSpellcasterSectionViewModel(information.UniqueIdentifier);
+            // IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
             SpellcastingSheetContent spellcastingSheetContent = new SpellcastingSheetContent();
             spellcastingSheetContent.SpellcastingClass = information.Name;
             spellcastingSheetContent.SpellcastingAbility = information.AbilityName;
-            spellcastingSheetContent.SpellcastingAttackModifier = spellcasterSectionViewModel.InformationHeader.SpellAttackModifier.ToString();
-            spellcastingSheetContent.SpellcastingSave = spellcasterSectionViewModel.InformationHeader.SpellSaveDc.ToString();
-            spellcastingSheetContent.Spells1.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot1;
-            spellcastingSheetContent.Spells2.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot2;
-            spellcastingSheetContent.Spells3.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot3;
-            spellcastingSheetContent.Spells4.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot4;
-            spellcastingSheetContent.Spells5.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot5;
-            spellcastingSheetContent.Spells6.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot6;
-            spellcastingSheetContent.Spells7.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot7;
-            spellcastingSheetContent.Spells8.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot8;
-            spellcastingSheetContent.Spells9.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot9;
+            //spellcastingSheetContent.SpellcastingAttackModifier = spellcasterSectionViewModel.InformationHeader.SpellAttackModifier.ToString();
+            //spellcastingSheetContent.SpellcastingSave = spellcasterSectionViewModel.InformationHeader.SpellSaveDc.ToString();
+            //spellcastingSheetContent.Spells1.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot1;
+            //spellcastingSheetContent.Spells2.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot2;
+            //spellcastingSheetContent.Spells3.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot3;
+            //spellcastingSheetContent.Spells4.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot4;
+            //spellcastingSheetContent.Spells5.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot5;
+            //spellcastingSheetContent.Spells6.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot6;
+            //spellcastingSheetContent.Spells7.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot7;
+            //spellcastingSheetContent.Spells8.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot8;
+            //spellcastingSheetContent.Spells9.SlotsCount = spellcasterSectionViewModel.InformationHeader.Slot9;
             SpellcastingSheetContent spellcastingSheetContent2 = spellcastingSheetContent;
             if (information.Prepare)
             {
@@ -621,43 +621,43 @@ namespace Builder.Presentation.Services
                 spellcastingSheetContent2.SpellcastingPrepareCount = "N/A";
             }
             spellcastingSheetContent2.SpellcastingNotes = "implement spellcasting notes";
-            foreach (SelectionElement item in spells)
-            {
-                Spell spell = item.Element.AsElement<Spell>();
-                switch (spell.Level)
-                {
-                    case 0:
-                        spellcastingSheetContent2.Cantrips.Collection.Add(new SpellcastingSpellContent(spell.Name, isPrepared: true));
-                        break;
-                    case 1:
-                        spellcastingSheetContent2.Spells1.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 2:
-                        spellcastingSheetContent2.Spells2.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 3:
-                        spellcastingSheetContent2.Spells3.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 4:
-                        spellcastingSheetContent2.Spells4.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 5:
-                        spellcastingSheetContent2.Spells5.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 6:
-                        spellcastingSheetContent2.Spells6.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 7:
-                        spellcastingSheetContent2.Spells7.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 8:
-                        spellcastingSheetContent2.Spells8.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                    case 9:
-                        spellcastingSheetContent2.Spells9.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
-                        break;
-                }
-            }
+            //foreach (SelectionElement item in spells)
+            //{
+            //    Spell spell = item.Element.AsElement<Spell>();
+            //    switch (spell.Level)
+            //    {
+            //        case 0:
+            //            spellcastingSheetContent2.Cantrips.Collection.Add(new SpellcastingSpellContent(spell.Name, isPrepared: true));
+            //            break;
+            //        case 1:
+            //            spellcastingSheetContent2.Spells1.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 2:
+            //            spellcastingSheetContent2.Spells2.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 3:
+            //            spellcastingSheetContent2.Spells3.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 4:
+            //            spellcastingSheetContent2.Spells4.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 5:
+            //            spellcastingSheetContent2.Spells5.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 6:
+            //            spellcastingSheetContent2.Spells6.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 7:
+            //            spellcastingSheetContent2.Spells7.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 8:
+            //            spellcastingSheetContent2.Spells8.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //        case 9:
+            //            spellcastingSheetContent2.Spells9.Collection.Add(new SpellcastingSpellContent(spell.Name, item.IsChosen));
+            //            break;
+            //    }
+            //}
             return spellcastingSheetContent2;
         }
 
@@ -1279,8 +1279,8 @@ namespace Builder.Presentation.Services
             Character character = manager.Character;
             StatisticValuesGroupCollection statisticValues = manager.StatisticsCalculator.StatisticValues;
             CharacterStatus status = manager.Status;
-            SpellcasterSelectionControlViewModel spellcasterSectionViewModel = SpellcastingSectionHandler.Current.GetSpellcasterSectionViewModel(information.UniqueIdentifier);
-            IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
+            //SpellcasterSelectionControlViewModel spellcasterSectionViewModel = SpellcastingSectionHandler.Current.GetSpellcasterSectionViewModel(information.UniqueIdentifier);
+            //IOrderedEnumerable<SelectionElement> spells = SpellcastingSectionHandler.Current.GetSpells(information);
             characterSheetSpellcastingPageExportContent.SpellcastingClass = information.Name;
             try
             {
@@ -1291,20 +1291,20 @@ namespace Builder.Presentation.Services
             {
             }
             characterSheetSpellcastingPageExportContent.Ability = information.AbilityName;
-            characterSheetSpellcastingPageExportContent.AttackBonus = spellcasterSectionViewModel.InformationHeader.SpellAttackModifier.ToValueString();
-            characterSheetSpellcastingPageExportContent.Save = spellcasterSectionViewModel.InformationHeader.SpellSaveDc.ToString();
+            //characterSheetSpellcastingPageExportContent.AttackBonus = spellcasterSectionViewModel.InformationHeader.SpellAttackModifier.ToValueString();
+            //characterSheetSpellcastingPageExportContent.Save = spellcasterSectionViewModel.InformationHeader.SpellSaveDc.ToString();
             characterSheetSpellcastingPageExportContent.PrepareCount = (information.Prepare ? statisticValues.GetValue(information.GetPrepareAmountStatisticName()).ToString() : "N/A");
             characterSheetSpellcastingPageExportContent.Notes = "";
             characterSheetSpellcastingPageExportContent.IsMulticlassSpellcaster = status.HasMulticlassSpellSlots;
-            characterSheetSpellcastingPageExportContent.Spells1.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot1;
-            characterSheetSpellcastingPageExportContent.Spells2.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot2;
-            characterSheetSpellcastingPageExportContent.Spells3.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot3;
-            characterSheetSpellcastingPageExportContent.Spells4.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot4;
-            characterSheetSpellcastingPageExportContent.Spells5.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot5;
-            characterSheetSpellcastingPageExportContent.Spells6.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot6;
-            characterSheetSpellcastingPageExportContent.Spells7.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot7;
-            characterSheetSpellcastingPageExportContent.Spells8.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot8;
-            characterSheetSpellcastingPageExportContent.Spells9.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot9;
+            //characterSheetSpellcastingPageExportContent.Spells1.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot1;
+            //characterSheetSpellcastingPageExportContent.Spells2.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot2;
+            //characterSheetSpellcastingPageExportContent.Spells3.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot3;
+            //characterSheetSpellcastingPageExportContent.Spells4.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot4;
+            //characterSheetSpellcastingPageExportContent.Spells5.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot5;
+            //characterSheetSpellcastingPageExportContent.Spells6.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot6;
+            //characterSheetSpellcastingPageExportContent.Spells7.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot7;
+            //characterSheetSpellcastingPageExportContent.Spells8.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot8;
+            //characterSheetSpellcastingPageExportContent.Spells9.AvailableSlots = spellcasterSectionViewModel.InformationHeader.Slot9;
             characterSheetSpellcastingPageExportContent.Cantrips.Level = 0;
             characterSheetSpellcastingPageExportContent.Spells1.Level = 1;
             characterSheetSpellcastingPageExportContent.Spells2.Level = 2;
@@ -1317,84 +1317,84 @@ namespace Builder.Presentation.Services
             characterSheetSpellcastingPageExportContent.Spells9.Level = 9;
             if (status.HasMulticlassSpellSlots)
             {
-                int slot = character.MulticlassSpellSlots.Slot1;
-                int slot2 = character.MulticlassSpellSlots.Slot2;
-                int slot3 = character.MulticlassSpellSlots.Slot3;
-                int slot4 = character.MulticlassSpellSlots.Slot4;
-                int slot5 = character.MulticlassSpellSlots.Slot5;
-                int slot6 = character.MulticlassSpellSlots.Slot6;
-                int slot7 = character.MulticlassSpellSlots.Slot7;
-                int slot8 = character.MulticlassSpellSlots.Slot8;
-                int slot9 = character.MulticlassSpellSlots.Slot9;
-                characterSheetSpellcastingPageExportContent.Spells1.AvailableSlots = slot;
-                characterSheetSpellcastingPageExportContent.Spells2.AvailableSlots = slot2;
-                characterSheetSpellcastingPageExportContent.Spells3.AvailableSlots = slot3;
-                characterSheetSpellcastingPageExportContent.Spells4.AvailableSlots = slot4;
-                characterSheetSpellcastingPageExportContent.Spells5.AvailableSlots = slot5;
-                characterSheetSpellcastingPageExportContent.Spells6.AvailableSlots = slot6;
-                characterSheetSpellcastingPageExportContent.Spells7.AvailableSlots = slot7;
-                characterSheetSpellcastingPageExportContent.Spells8.AvailableSlots = slot8;
-                characterSheetSpellcastingPageExportContent.Spells9.AvailableSlots = slot9;
+                //int slot = character.MulticlassSpellSlots.Slot1;
+                //int slot2 = character.MulticlassSpellSlots.Slot2;
+                //int slot3 = character.MulticlassSpellSlots.Slot3;
+                //int slot4 = character.MulticlassSpellSlots.Slot4;
+                //int slot5 = character.MulticlassSpellSlots.Slot5;
+                //int slot6 = character.MulticlassSpellSlots.Slot6;
+                //int slot7 = character.MulticlassSpellSlots.Slot7;
+                //int slot8 = character.MulticlassSpellSlots.Slot8;
+                //int slot9 = character.MulticlassSpellSlots.Slot9;
+                //characterSheetSpellcastingPageExportContent.Spells1.AvailableSlots = slot;
+                //characterSheetSpellcastingPageExportContent.Spells2.AvailableSlots = slot2;
+                //characterSheetSpellcastingPageExportContent.Spells3.AvailableSlots = slot3;
+                //characterSheetSpellcastingPageExportContent.Spells4.AvailableSlots = slot4;
+                //characterSheetSpellcastingPageExportContent.Spells5.AvailableSlots = slot5;
+                //characterSheetSpellcastingPageExportContent.Spells6.AvailableSlots = slot6;
+                //characterSheetSpellcastingPageExportContent.Spells7.AvailableSlots = slot7;
+                //characterSheetSpellcastingPageExportContent.Spells8.AvailableSlots = slot8;
+                //characterSheetSpellcastingPageExportContent.Spells9.AvailableSlots = slot9;
             }
             bool sheetIncludeNonPreparedSpells = ApplicationManager.Current.Settings.Settings.SheetIncludeNonPreparedSpells;
-            foreach (SelectionElement item in spells)
-            {
-                Spell spell = item.Element.AsElement<Spell>();
-                bool alwaysPrepared = spell.Aquisition.WasGranted && (spell.Aquisition.GrantRule.Setters.GetSetter("prepared")?.ValueAsBool() ?? false);
-                CharacterSheetSpellcastingPageExportContent.SpellExportContent spellExportContent = new CharacterSheetSpellcastingPageExportContent.SpellExportContent
-                {
-                    IsPrepared = item.IsChosen,
-                    AlwaysPrepared = alwaysPrepared,
-                    Name = spell.Name,
-                    CastingTime = spell.CastingTime,
-                    Description = ElementDescriptionGenerator.GeneratePlainDescription(spell.Description),
-                    Range = spell.Range,
-                    Level = spell.Level.ToString(),
-                    Duration = spell.Duration,
-                    Components = spell.GetComponentsString(),
-                    Concentration = spell.IsConcentration,
-                    Ritual = spell.IsRitual,
-                    School = spell.MagicSchool,
-                    Subtitle = spell.Underline
-                };
-                if (spell.Level <= 0 || !information.Prepare || spellExportContent.IsPrepared || sheetIncludeNonPreparedSpells)
-                {
-                    addedSpells.Add(spell.Name);
-                    switch (spell.Level)
-                    {
-                        case 0:
-                            characterSheetSpellcastingPageExportContent.Cantrips.Spells.Add(spellExportContent);
-                            break;
-                        case 1:
-                            characterSheetSpellcastingPageExportContent.Spells1.Spells.Add(spellExportContent);
-                            break;
-                        case 2:
-                            characterSheetSpellcastingPageExportContent.Spells2.Spells.Add(spellExportContent);
-                            break;
-                        case 3:
-                            characterSheetSpellcastingPageExportContent.Spells3.Spells.Add(spellExportContent);
-                            break;
-                        case 4:
-                            characterSheetSpellcastingPageExportContent.Spells4.Spells.Add(spellExportContent);
-                            break;
-                        case 5:
-                            characterSheetSpellcastingPageExportContent.Spells5.Spells.Add(spellExportContent);
-                            break;
-                        case 6:
-                            characterSheetSpellcastingPageExportContent.Spells6.Spells.Add(spellExportContent);
-                            break;
-                        case 7:
-                            characterSheetSpellcastingPageExportContent.Spells7.Spells.Add(spellExportContent);
-                            break;
-                        case 8:
-                            characterSheetSpellcastingPageExportContent.Spells8.Spells.Add(spellExportContent);
-                            break;
-                        case 9:
-                            characterSheetSpellcastingPageExportContent.Spells9.Spells.Add(spellExportContent);
-                            break;
-                    }
-                }
-            }
+            //foreach (SelectionElement item in spells)
+            //{
+            //    Spell spell = item.Element.AsElement<Spell>();
+            //    bool alwaysPrepared = spell.Aquisition.WasGranted && (spell.Aquisition.GrantRule.Setters.GetSetter("prepared")?.ValueAsBool() ?? false);
+            //    CharacterSheetSpellcastingPageExportContent.SpellExportContent spellExportContent = new CharacterSheetSpellcastingPageExportContent.SpellExportContent
+            //    {
+            //        IsPrepared = item.IsChosen,
+            //        AlwaysPrepared = alwaysPrepared,
+            //        Name = spell.Name,
+            //        CastingTime = spell.CastingTime,
+            //        Description = ElementDescriptionGenerator.GeneratePlainDescription(spell.Description),
+            //        Range = spell.Range,
+            //        Level = spell.Level.ToString(),
+            //        Duration = spell.Duration,
+            //        Components = spell.GetComponentsString(),
+            //        Concentration = spell.IsConcentration,
+            //        Ritual = spell.IsRitual,
+            //        School = spell.MagicSchool,
+            //        Subtitle = spell.Underline
+            //    };
+            //    if (spell.Level <= 0 || !information.Prepare || spellExportContent.IsPrepared || sheetIncludeNonPreparedSpells)
+            //    {
+            //        addedSpells.Add(spell.Name);
+            //        switch (spell.Level)
+            //        {
+            //            case 0:
+            //                characterSheetSpellcastingPageExportContent.Cantrips.Spells.Add(spellExportContent);
+            //                break;
+            //            case 1:
+            //                characterSheetSpellcastingPageExportContent.Spells1.Spells.Add(spellExportContent);
+            //                break;
+            //            case 2:
+            //                characterSheetSpellcastingPageExportContent.Spells2.Spells.Add(spellExportContent);
+            //                break;
+            //            case 3:
+            //                characterSheetSpellcastingPageExportContent.Spells3.Spells.Add(spellExportContent);
+            //                break;
+            //            case 4:
+            //                characterSheetSpellcastingPageExportContent.Spells4.Spells.Add(spellExportContent);
+            //                break;
+            //            case 5:
+            //                characterSheetSpellcastingPageExportContent.Spells5.Spells.Add(spellExportContent);
+            //                break;
+            //            case 6:
+            //                characterSheetSpellcastingPageExportContent.Spells6.Spells.Add(spellExportContent);
+            //                break;
+            //            case 7:
+            //                characterSheetSpellcastingPageExportContent.Spells7.Spells.Add(spellExportContent);
+            //                break;
+            //            case 8:
+            //                characterSheetSpellcastingPageExportContent.Spells8.Spells.Add(spellExportContent);
+            //                break;
+            //            case 9:
+            //                characterSheetSpellcastingPageExportContent.Spells9.Spells.Add(spellExportContent);
+            //                break;
+            //        }
+            //    }
+            //}
             return characterSheetSpellcastingPageExportContent;
         }
 

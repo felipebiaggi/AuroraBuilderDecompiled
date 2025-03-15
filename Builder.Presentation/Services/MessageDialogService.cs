@@ -1,7 +1,8 @@
-﻿using Builder.Presentation.Properties;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows;
+using Builder.Presentation.Properties;
+//using Builder.Presentation.Views.Dialogs;
 
 namespace Builder.Presentation.Services
 {
@@ -39,7 +40,7 @@ namespace Builder.Presentation.Services
                 {
                     text = text + Environment.NewLine + $"Inner Exception: {ex.InnerException}";
                 }
-                new ExceptionMessageWindow(title, introMessage, text).ShowDialog();
+                //new ExceptionMessageWindow(title, introMessage, text).ShowDialog();
                 return;
             }
             string text2 = "";
@@ -68,7 +69,7 @@ namespace Builder.Presentation.Services
                 text3 = ex.Message;
                 message = ex.Source + "\r\n\r\n" + ex.StackTrace;
             }
-            new ExceptionWindow(title, text2, text3, message).ShowDialog();
+            //new ExceptionWindow(title, text2, text3, message).ShowDialog();
         }
     }
 }

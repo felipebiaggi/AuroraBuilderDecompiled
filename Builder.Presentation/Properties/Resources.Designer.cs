@@ -149,5 +149,23 @@ namespace Builder.Presentation.Properties {
                 return ResourceManager.GetString("ApplicationVersionUrl", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.0.0.0.
+        /// </summary>
+        internal static string AppVersionCheck {
+            get {
+                return ResourceManager.GetString("AppVersionCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bar.
+        /// </summary>
+        internal static string NotificationUrl {
+            get {
+                return ResourceManager.GetString("NotificationUrl", resourceCulture);
+            }
+        }
     }
 }

@@ -97,23 +97,23 @@ namespace Builder.Presentation.ViewModels.Shell.Manage
         private void AddAttack()
         {
             AttackSectionItem attackSectionItem = new AttackSectionItem("New Attack");
-            bool? flag = new CreateAttackWindow
-            {
-                DataContext = attackSectionItem
-            }.ShowDialog();
-            if (flag.HasValue && flag.Value)
-            {
-                Attacks.Items.Add(attackSectionItem);
-            }
+            //bool? flag = new CreateAttackWindow
+            //{
+            //    DataContext = attackSectionItem
+            //}.ShowDialog();
+            //if (flag.HasValue && flag.Value)
+            //{
+            //    Attacks.Items.Add(attackSectionItem);
+            //}
         }
 
         private void EditAttack(AttackSectionItem parameter)
         {
             if (parameter != null)
             {
-                CreateAttackWindow createAttackWindow = new CreateAttackWindow();
-                createAttackWindow.DataContext = parameter;
-                createAttackWindow.ShowDialog();
+                //CreateAttackWindow createAttackWindow = new CreateAttackWindow();
+                //createAttackWindow.DataContext = parameter;
+                //createAttackWindow.ShowDialog();
             }
         }
 

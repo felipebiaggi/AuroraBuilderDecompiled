@@ -1,18 +1,23 @@
-﻿using Builder.Core;
-using Builder.Data;
-using Builder.Data.Elements;
-using Builder.Presentation.Events.Character;
-using Builder.Presentation.Models;
-using Builder.Presentation.Models.NewFolder1;
-using Builder.Presentation.Services;
-using Builder.Presentation.Services.Data;
-using Builder.Presentation.ViewModels.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Input;
+using Builder.Core;
+using Builder.Data;
+using Builder.Data.Elements;
+using Builder.Presentation;
+using Builder.Presentation.Events.Character;
+using Builder.Presentation.Models;
+using Builder.Presentation.Models.NewFolder1;
+using Builder.Presentation.Properties;
+using Builder.Presentation.Services;
+using Builder.Presentation.Services.Data;
+using Builder.Presentation.ViewModels.Base;
+using Builder.Presentation.ViewModels.Shell.Manage;
+using Builder.Presentation.Views.Sliders;
+
 
 namespace Builder.Presentation.ViewModels.Shell.Manage
 {

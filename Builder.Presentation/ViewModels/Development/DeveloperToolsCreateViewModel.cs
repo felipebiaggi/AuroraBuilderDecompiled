@@ -1,15 +1,17 @@
-﻿using Builder.Core;
-using Builder.Data;
-using Builder.Data.Rules;
-using Builder.Presentation.Services.Data;
-using Builder.Presentation.ViewModels.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using System.Xml;
+using Builder.Core;
+using Builder.Data;
+using Builder.Data.Rules;
+using Builder.Presentation.Services.Data;
+using Builder.Presentation.ViewModels.Base;
+using Builder.Presentation.ViewModels.Development;
+using Builder.Presentation.Views.Development;
 
 namespace Builder.Presentation.ViewModels.Development
 {

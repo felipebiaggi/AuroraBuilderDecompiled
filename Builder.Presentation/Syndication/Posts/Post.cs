@@ -1,7 +1,10 @@
-﻿using Builder.Core;
-using System;
+﻿using System;
+using System.Diagnostics;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using Builder.Core;
+using Builder.Presentation.Syndication.Posts;
+
 
 namespace Builder.Presentation.Syndication.Posts
 {

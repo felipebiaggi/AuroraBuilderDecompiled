@@ -1,14 +1,17 @@
-﻿using Builder.Core.Events;
-using Builder.Core.Logging;
-using Builder.Data.Rules;
-using Builder.Presentation.Events.Global;
-using Builder.Presentation.Extensions;
-using Builder.Presentation.Interfaces;
-using Builder.Presentation.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Builder.Core.Events;
+using Builder.Core.Logging;
+using Builder.Data.Rules;
+using Builder.Presentation;
+using Builder.Presentation.Events.Global;
+using Builder.Presentation.Extensions;
+using Builder.Presentation.Interfaces;
+using Builder.Presentation.Services;
+//using Builder.Presentation.UserControls;
+using Builder.Presentation.ViewModels;
 
 namespace Builder.Presentation.Services
 {
@@ -75,11 +78,11 @@ namespace Builder.Presentation.Services
                 ISelectionRuleExpander selectionRuleExpander;
                 if (args.SelectionRule.Attributes.IsList)
                 {
-                    selectionRuleExpander = new ListItemsSelectionRuleExpander(args.SelectionRule, i);
+                    // selectionRuleExpander = new ListItemsSelectionRuleExpander(args.SelectionRule, i);
                     foreach (ISupportExpanders item in _supports.Where((ISupportExpanders s) => s.Listings.Contains(args.SelectionRule.ElementHeader.Type)))
                     {
-                        item.AddExpander(selectionRuleExpander);
-                        Logger.Debug("expander '{0}' assigned to support '{1}'", selectionRuleExpander.SelectionRule, item.Name);
+                        //item.AddExpander(selectionRuleExpander);
+                        //Logger.Debug("expander '{0}' assigned to support '{1}'", selectionRuleExpander.SelectionRule, item.Name);
                     }
                 }
                 else
@@ -89,19 +92,19 @@ namespace Builder.Presentation.Services
                         case "Deity":
                         case "Alignment":
                         case "Ability Score Improvement":
-                            selectionRuleExpander = new SelectionRuleComboBox(args.SelectionRule, i);
+                            //selectionRuleExpander = new SelectionRuleComboBox(args.SelectionRule, i);
                             break;
                         default:
-                            selectionRuleExpander = new SelectionRuleExpander(args.SelectionRule, i);
+                            //selectionRuleExpander = new SelectionRuleExpander(args.SelectionRule, i);
                             break;
                     }
                     foreach (ISupportExpanders item2 in _supports.Where((ISupportExpanders s) => s.Listings.Contains(args.SelectionRule.Attributes.Type)))
                     {
-                        item2.AddExpander(selectionRuleExpander);
-                        Logger.Info("expander '{0}' assigned to support '{1}'", selectionRuleExpander.SelectionRule, item2.Name);
+                        //item2.AddExpander(selectionRuleExpander);
+                        //Logger.Info("expander '{0}' assigned to support '{1}'", selectionRuleExpander.SelectionRule, item2.Name);
                     }
                 }
-                _expanders.Add(selectionRuleExpander);
+                //_expanders.Add(selectionRuleExpander);
             }
         }
 
@@ -139,10 +142,10 @@ namespace Builder.Presentation.Services
                 }
                 _expanders.Remove(selectionRuleExpander);
                 Logger.Info("expander '{0}' removed from handler", selectionRuleExpander.SelectionRule.ElementHeader.Name);
-                if (selectionRuleExpander is SelectionRuleExpander)
-                {
-                    (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().IsEnabled = false;
-                }
+                //if (selectionRuleExpander is SelectionRuleExpander)
+                //{
+                //    (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().IsEnabled = false;
+                //}
             }
         }
 
@@ -155,13 +158,14 @@ namespace Builder.Presentation.Services
             ISelectionRuleExpander selectionRuleExpander = _expanders.Single((ISelectionRuleExpander x) => x.SelectionRule.UniqueIdentifier == selectionRule.UniqueIdentifier);
             if (selectionRuleExpander.SelectionRule.Attributes.IsList)
             {
-                return (selectionRuleExpander as ListItemsSelectionRuleExpander).GetViewModel<ListItemSelectionRuleExpanderViewModel>().SelectionMade;
+                //return (selectionRuleExpander as ListItemsSelectionRuleExpander).GetViewModel<ListItemSelectionRuleExpanderViewModel>().SelectionMade;
             }
-            if (selectionRuleExpander is SelectionRuleComboBox)
-            {
-                return (selectionRuleExpander as SelectionRuleComboBox).GetViewModel<SelectionRuleComboBoxViewModel>().ElementRegistered;
-            }
-            return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().ElementRegistered;
+            //if (selectionRuleExpander is SelectionRuleComboBox)
+            //{
+            //    return (selectionRuleExpander as SelectionRuleComboBox).GetViewModel<SelectionRuleComboBoxViewModel>().ElementRegistered;
+            //}
+            //return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().ElementRegistered;
+            return false;
         }
 
         public int GetExpanderCount(SelectRule selectionRule)
@@ -171,20 +175,21 @@ namespace Builder.Presentation.Services
 
         public object GetRegisteredElement(SelectRule selectionRule, int number = 1)
         {
-            ISelectionRuleExpander selectionRuleExpander = _expanders.Single((ISelectionRuleExpander x) => x.SelectionRule.UniqueIdentifier == selectionRule.UniqueIdentifier && x.Number == number);
-            if (selectionRule.Attributes.IsList)
-            {
-                return (selectionRuleExpander as ListItemsSelectionRuleExpander).GetViewModel<ListItemSelectionRuleExpanderViewModel>().RegisteredItem;
-            }
-            if (!(selectionRuleExpander is SelectionRuleExpander))
-            {
-                if (selectionRuleExpander is SelectionRuleComboBox)
-                {
-                    return (selectionRuleExpander as SelectionRuleComboBox).GetViewModel<SelectionRuleComboBoxViewModel>().RegisteredElement;
-                }
-                throw new ArgumentException($"GetRegisteredElement unknown expander: {selectionRuleExpander}");
-            }
-            return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().RegisteredElement;
+            //ISelectionRuleExpander selectionRuleExpander = _expanders.Single((ISelectionRuleExpander x) => x.SelectionRule.UniqueIdentifier == selectionRule.UniqueIdentifier && x.Number == number);
+            //if (selectionRule.Attributes.IsList)
+            //{
+            //    return (selectionRuleExpander as ListItemsSelectionRuleExpander).GetViewModel<ListItemSelectionRuleExpanderViewModel>().RegisteredItem;
+            //}
+            //if (!(selectionRuleExpander is SelectionRuleExpander))
+            //{
+            //    if (selectionRuleExpander is SelectionRuleComboBox)
+            //    {
+            //        return (selectionRuleExpander as SelectionRuleComboBox).GetViewModel<SelectionRuleComboBoxViewModel>().RegisteredElement;
+            //    }
+            //    throw new ArgumentException($"GetRegisteredElement unknown expander: {selectionRuleExpander}");
+            //}
+            //return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().RegisteredElement;
+            return false;
         }
 
         private IEnumerable<ISelectionRuleExpander> GetExpanders(string uniqueIdentifier)
@@ -277,9 +282,9 @@ namespace Builder.Presentation.Services
             ISelectionRuleExpander selectionRuleExpander = _expanders.FirstOrDefault((ISelectionRuleExpander x) => x.SelectionRule.UniqueIdentifier.Equals(rule.UniqueIdentifier) && x.Number == number);
             if (selectionRuleExpander != null)
             {
-                SelectionRuleExpanderViewModel viewModel = (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>();
-                viewModel.RetrainLevel = retrainLevel;
-                viewModel.Repopulate();
+                //SelectionRuleExpanderViewModel viewModel = (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>();
+                //viewModel.RetrainLevel = retrainLevel;
+                //viewModel.Repopulate();
             }
         }
 
@@ -325,14 +330,14 @@ namespace Builder.Presentation.Services
                 {
                     return 0;
                 }
-                if (selectionRuleExpander is SelectionRuleExpander)
-                {
-                    return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().RetrainLevel;
-                }
-                if (selectionRuleExpander is ListItemsSelectionRuleExpander)
-                {
-                    return 0;
-                }
+                //if (selectionRuleExpander is SelectionRuleExpander)
+                //{
+                //    return (selectionRuleExpander as SelectionRuleExpander).GetViewModel<SelectionRuleExpanderViewModel>().RetrainLevel;
+                //}
+                //if (selectionRuleExpander is ListItemsSelectionRuleExpander)
+                //{
+                //    return 0;
+                //}
             }
             catch (Exception ex)
             {
