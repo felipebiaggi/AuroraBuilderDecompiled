@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <Style x:Key="StatisticsValueTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="5,0,5,1"/>
+        <Setter Property="TextBlock.FontSize" Value="10"/>
+        <Setter Property="TextBlock.FontWeight" Value="Regular"/>
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="StatisticsNameTextBlockStyle" TargetType="{x:Type TextBlock}"
+         BasedOn="{StaticResource StatisticsValueTextBlockStyle}">
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="StatisticsDescriptionTextBlockStyle" TargetType="{x:Type TextBlock}"
+         BasedOn="{StaticResource StatisticsValueTextBlockStyle}">
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left"/>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource GrayBrush2}"/>
+    </Style>
+    <Style x:Key="InformationPanelUncheckedIconStyle" TargetType="{x:Type iconPacks:PackIconFontAwesome}">
+        <Setter Property="FrameworkElement.Margin" Value="4,3"/>
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.Height" Value="14"/>
+        <Setter Property="FrameworkElement.Width" Value="14"/>
+        <Setter Property="iconPacks:PackIconFontAwesome.Kind" Value="SquareSolid"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource AccentColorBrush4}"/>
+    </Style>
+    <Style x:Key="InformationPanelCheckedIconStyle" TargetType="{x:Type iconPacks:PackIconFontAwesome}"
+         BasedOn="{StaticResource InformationPanelUncheckedIconStyle}">
+        <Setter Property="iconPacks:PackIconFontAwesome.Kind" Value="CheckSquareSolid"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource HighlightBrush}"/>
+    </Style>
+</ResourceDictionary>

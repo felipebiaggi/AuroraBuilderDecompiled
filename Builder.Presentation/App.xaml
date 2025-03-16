@@ -13,10 +13,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/clean/cleanwindow.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/styles/clean/clean.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/styles/clean/cleangroupbox.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Accents/Purple.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Theme/AuroraDark.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

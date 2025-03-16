@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Builder.Presentation.Controls">
+    <controls:AngleToPointConverter x:Key="prConverter"/>
+    <controls:AngleToIsLargeConverter x:Key="isLargeConverter"/>
+    <Style x:Key="circularProgressBar" TargetType="{x:Type controls:CircularProgressBar}">
+        <Setter Property="RangeBase.Value" Value="10"/>
+        <Setter Property="RangeBase.Maximum" Value="100"/>
+        <Setter Property="controls:CircularProgressBar.StrokeThickness" Value="10"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:CircularProgressBar}">
+                    <Canvas Width="100" Height="100">
+                        <Ellipse Width="100" Height="100" Stroke="{DynamicResource AccentColorBrush4}" StrokeThickness=".5"/>
+                        <Path Stroke="{TemplateBinding Control.Background}"
+                  StrokeThickness="{TemplateBinding controls:CircularProgressBar.StrokeThickness}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure x:Name="fig" StartPoint="50,0">
+                                        <ArcSegment RotationAngle="0" SweepDirection="Clockwise" Size="50,50"
+                                Point="{Binding Path=Angle, Converter={StaticResource prConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType=ProgressBar}}"
+                                IsLargeArc="{Binding Path=Angle, Converter={StaticResource isLargeConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType=ProgressBar}}"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

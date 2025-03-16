@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Color x:Key="AuroraGoldColor">#B38000</Color>
+    <Color x:Key="AuroraBlack">#111113</Color>
+    <Color x:Key="AuroraDark">#151516</Color>
+    <Color x:Key="AuroraLight">#FFF7F7F7</Color>
+    <Color x:Key="SuccessColor">#37753D</Color>
+    <Color x:Key="SuccessDarkColor">#1D5338</Color>
+    <Color x:Key="WarningColor">#CF6E39</Color>
+    <Color x:Key="DangerColor">#943131</Color>
+    <Color x:Key="DragonHeadForegroundColor">#8E2626</Color>
+    <Color x:Key="DeveloperIndicatorForegroundColor">#7147AE</Color>
+    <Color x:Key="NewNotificationIndicatorForegroundColor">#268E2E</Color>
+    <Color x:Key="ProgressIndicatorForegroundColor">#416493</Color>
+    <Color x:Key="SettingsIndicatorForegroundColor">#FFFFFF</Color>
+    <Color x:Key="WebIndicatorForegroundColor">#FFFFFF</Color>
+    <Color x:Key="PinnedCharacterIconColor">Goldenrod</Color>
+    <SolidColorBrush x:Key="AuroraGoldColorBrush" Color="{StaticResource AuroraGoldColor}" />
+    <SolidColorBrush x:Key="AuroraBlackColorBrush" Color="{StaticResource AuroraBlack}" />
+    <SolidColorBrush x:Key="AuroraDarkColorBrush" Color="{StaticResource AuroraDark}" />
+    <SolidColorBrush x:Key="AuroraLightColorBrush" Color="{StaticResource AuroraLight}" />
+    <SolidColorBrush x:Key="SuccessColorBrush" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="SuccessDarkColorBrush" Color="{StaticResource SuccessDarkColor}" />
+    <SolidColorBrush x:Key="WarningColorBrush" Color="{StaticResource WarningColor}" />
+    <SolidColorBrush x:Key="DangerColorBrush" Color="{StaticResource DangerColor}" />
+    <SolidColorBrush x:Key="DragonHeadForegroundColorBrush" options:Freeze="True" Color="{StaticResource DragonHeadForegroundColor}" />
+    <SolidColorBrush x:Key="DeveloperIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource DeveloperIndicatorForegroundColor}" />
+    <SolidColorBrush x:Key="NewNotificationIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource NewNotificationIndicatorForegroundColor}" />
+    <SolidColorBrush x:Key="ProgressIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="SettingsIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource SettingsIndicatorForegroundColor}" />
+    <SolidColorBrush x:Key="WebIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource WebIndicatorForegroundColor}" />
+    <SolidColorBrush x:Key="PinnedCharacterIconColorBrush" options:Freeze="True" Color="{StaticResource PinnedCharacterIconColor}" />
+    <SolidColorBrush x:Key="LoadingIndicatorForegroundColorBrush" options:Freeze="True" Color="{StaticResource ContrastColor}" />
+    <Color x:Key="ReferenceAccentColor">#8F3C96</Color>
+    <Color x:Key="ContrastColor">#B38000</Color>
+    <system:Byte x:Key="AccentR">143</system:Byte>
+    <system:Byte x:Key="AccentG">60</system:Byte>
+    <system:Byte x:Key="AccentB">150</system:Byte>
+    <Color x:Key="HighlightColor" A="255" R="{StaticResource AccentR}" G="{StaticResource AccentG}" B="{StaticResource AccentB}" />
+    <Color x:Key="AccentColor" A="205" R="{StaticResource AccentR}" G="{StaticResource AccentG}" B="{StaticResource AccentB}" />
+    <Color x:Key="AccentColor2" A="153" R="{StaticResource AccentR}" G="{StaticResource AccentG}" B="{StaticResource AccentB}" />
+    <Color x:Key="AccentColor3" A="101" R="{StaticResource AccentR}" G="{StaticResource AccentG}" B="{StaticResource AccentB}" />
+    <Color x:Key="AccentColor4" A="052" R="{StaticResource AccentR}" G="{StaticResource AccentG}" B="{StaticResource AccentB}" />
+    <SolidColorBrush x:Key="HighlightBrush" options:Freeze="True" Color="{StaticResource HighlightColor}" />
+    <SolidColorBrush x:Key="AccentColorBrush" options:Freeze="True" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="AccentColorBrush2" options:Freeze="True" Color="{StaticResource AccentColor2}" />
+    <SolidColorBrush x:Key="AccentColorBrush3" options:Freeze="True" Color="{StaticResource AccentColor3}" />
+    <SolidColorBrush x:Key="AccentColorBrush4" options:Freeze="True" Color="{StaticResource AccentColor4}" />
+    <SolidColorBrush x:Key="ContrastColorBrush" options:Freeze="True" Color="{StaticResource ContrastColor}" />
+</ResourceDictionary>

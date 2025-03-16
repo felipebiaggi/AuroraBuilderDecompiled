@@ -1,0 +1,389 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls" 
+                    xmlns:converters="http://metro.mahapps.com/winfx/xaml/shared">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.TabControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:MetroTabItemCloseButtonWidthConverter x:Key="MetroTabItemCloseButtonWidthConverter" />
+    <Style x:Key="ModifiedMetroTabControlStyle" TargetType="{x:Type controls:MetroTabControl}">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MetroTabControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Name="ColumnDefinition0" />
+                            <ColumnDefinition Name="ColumnDefinition1" Width="0" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Name="RowDefinition0" Height="Auto" />
+                            <RowDefinition Name="RowDefinition1" Height="*" />
+                        </Grid.RowDefinitions>
+                        <TabPanel Name="HeaderPanel" Grid.Row="0" Grid.Column="0" Margin="{TemplateBinding controls:BaseMetroTabControl.TabStripMargin}" ZIndex="1" IsItemsHost="True" KeyboardNavigation.TabIndex="1" />
+                        <Border Name="ContentPanel" Grid.Row="1" Grid.Column="0" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Control.Padding}" ContentSource="SelectedContent" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabControl.TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="RowDefinition0" Property="RowDefinition.Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="RowDefinition.Height" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="TabControl.TabStripPlacement" Value="Left">
+                            <Setter TargetName="ColumnDefinition0" Property="ColumnDefinition.Width" Value="Auto" />
+                            <Setter TargetName="ColumnDefinition1" Property="ColumnDefinition.Width" Value="*" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="RowDefinition0" Property="RowDefinition.Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="RowDefinition.Height" Value="0" />
+                        </Trigger>
+                        <Trigger Property="TabControl.TabStripPlacement" Value="Right">
+                            <Setter TargetName="ColumnDefinition0" Property="ColumnDefinition.Width" Value="*" />
+                            <Setter TargetName="ColumnDefinition1" Property="ColumnDefinition.Width" Value="Auto" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="RowDefinition0" Property="RowDefinition.Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="RowDefinition.Height" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SubMetroTabItemStyle" TargetType="{x:Type controls:MetroTabItem}">
+        <Setter Property="controls:ControlsHelper.HeaderFontWeight" Value="SemiBold" />
+        <Setter Property="controls:ControlsHelper.HeaderFontSize" Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MetroTabItem}">
+                    <Border Name="Border" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" HorizontalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <ContentPresenter Name="ContentSite" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" Content="{TemplateBinding HeaderedContentControl.Header}" ContentStringFormat="{TemplateBinding HeaderedContentControl.HeaderStringFormat}" ContentSource="Header" TextElement.Foreground="{TemplateBinding Control.Foreground}" TextElement.FontWeight="{TemplateBinding controls:ControlsHelper.HeaderFontWeight}" TextElement.FontStretch="{TemplateBinding controls:ControlsHelper.HeaderFontStretch}" TextElement.FontSize="{TemplateBinding controls:ControlsHelper.HeaderFontSize}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="10,5" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" />
+                                <Button Name="PART_CloseButton" Background="{DynamicResource GrayNormalBrush}" CommandParameter="{TemplateBinding controls:MetroTabItem.CloseTabCommandParameter}" Command="{TemplateBinding controls:MetroTabItem.CloseTabCommand}" HorizontalAlignment="Right" IsTabStop="False" Margin="0,0,2,0" Style="{DynamicResource ChromelessButtonStyle}" VerticalAlignment="Top" Height="{Binding Width, Mode=OneWay, RelativeSource={RelativeSource Self}}" Width="{TemplateBinding Property=controls:ControlsHelper.HeaderFontSize}">
+                                    <FrameworkElement.Resources>
+                                        <ResourceDictionary>
+                                            <Canvas x:Key="tabitem_close" Clip="F1 M0,0 L76,0 L76,76 L0,76 L0,0" Height="76" Width="76">
+                                                <Path Data="F1 M26.9166,22.1667 L37.9999,33.25 L49.0832,22.1668 L53.8332,26.9168 L42.7499,38 L53.8332,49.0834 L49.0833,53.8334 L37.9999,42.75 L26.9166,53.8334 L22.1666,49.0833 L33.25,38 L22.1667,26.9167 L26.9166,22.1667" Fill="{DynamicResource BlackBrush}" Height="31.6667" Canvas.Left="22.1666" Stretch="Fill" Canvas.Top="22.1667" Width="31.6666" />
+                                            </Canvas>
+                                        </ResourceDictionary>
+                                    </FrameworkElement.Resources>
+                                    <UIElement.OpacityMask>
+                                        <VisualBrush Stretch="Uniform">
+                                            <VisualBrush.Visual>
+                                                <Canvas Clip="F1 M0,0 L76,0 L76,76 L0,76 L0,0" Height="76" Width="76">
+                                                    <Path Data="F1 M26.9166,22.1667 L37.9999,33.25 L49.0832,22.1668 L53.8332,26.9168 L42.7499,38 L53.8332,49.0834 L49.0833,53.8334 L37.9999,42.75 L26.9166,53.8334 L22.1666,49.0833 L33.25,38 L22.1667,26.9167 L26.9166,22.1667" Fill="{DynamicResource BlackBrush}" Height="31.6667" Canvas.Left="22.1666" Stretch="Fill" Canvas.Top="22.1667" Width="31.6666" />
+                                                </Canvas>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </UIElement.OpacityMask>
+                                </Button>
+                            </StackPanel>
+                            <Grid>
+                                <Rectangle Name="Underline" HorizontalAlignment="Stretch" Height="0" Margin="0,1,0,0">
+                                    <UIElement.Visibility>
+                                        <Binding Path="False">
+                                            <Binding.Converter>
+                                                <BooleanToVisibilityConverter />
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </UIElement.Visibility>
+                                </Rectangle>
+                            </Grid>
+                            <Polygon Name="UnderlinePointerOverlay" Points="0,0 50,0 25,2 25,2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,0" Height="10" Fill="{StaticResource HighlightBrush}" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabItem.IsSelected" Value="True">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource HighlightBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="Underline" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                        </Trigger>
+                        <Trigger Property="TabItem.IsSelected" Value="False">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource GrayNormalBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush3}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="ContentSite" Property="UIElement.Opacity" Value=".25" />
+                            <Setter TargetName="Underline" Value="{DynamicResource GrayNormalBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                        </Trigger>
+                        <Trigger SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush}" Property="TextElement.Background" />
+                            <Setter TargetName="Underline" Value="{DynamicResource GrayHoverBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                            <Setter TargetName="PART_CloseButton" Value="{DynamicResource GrayHoverBrush}" Property="Background" />
+                        </Trigger>
+                        <Trigger SourceName="PART_CloseButton" Property="UIElement.IsMouseOver" Value="True">
+                            <Setter TargetName="PART_CloseButton" Value="{DynamicResource AccentColorBrush}" Property="Background" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True" />
+                                <Condition Property="TabItem.IsSelected" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ContentSite" Value="{DynamicResource HighlightBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="Underline" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.BasedOn>
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="Padding" Value="6,2" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                <Setter Property="MinWidth" Value="5" />
+                <Setter Property="MinHeight" Value="5" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}" />
+                <Setter Property="Background" Value="#00FFFFFF" />
+                <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+                <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+                <Setter Property="controls:ControlsHelper.HeaderFontSize" Value="{DynamicResource TabItemFontSize}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabItem}">
+                            <Border Name="Border" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" HorizontalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <FrameworkElement.Resources>
+                                        <ResourceDictionary>
+                                            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                                        </ResourceDictionary>
+                                    </FrameworkElement.Resources>
+                                    <ContentPresenter Name="ContentSite" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" Content="{TemplateBinding HeaderedContentControl.Header}" ContentStringFormat="{TemplateBinding HeaderedContentControl.HeaderStringFormat}" ContentSource="Header" DockPanel.Dock="Top" TextElement.Foreground="{TemplateBinding Control.Foreground}" TextElement.FontWeight="{TemplateBinding controls:ControlsHelper.HeaderFontWeight}" TextElement.FontStretch="{TemplateBinding controls:ControlsHelper.HeaderFontStretch}" TextElement.FontSize="{TemplateBinding controls:ControlsHelper.HeaderFontSize}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" />
+                                    <Rectangle Name="Underline" DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Height="1" Margin="0,1,0,0">
+                                        <UIElement.Visibility>
+                                            <Binding Path="(controls:TabControlHelper.IsUnderlined)" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}">
+                                                <Binding.Converter>
+                                                    <BooleanToVisibilityConverter />
+                                                </Binding.Converter>
+                                            </Binding>
+                                        </UIElement.Visibility>
+                                    </Rectangle>
+                                </DockPanel>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="TabItem.TabStripPlacement" Value="Left">
+                                    <Setter TargetName="ContentSite" Property="DockPanel.Dock" Value="Left" />
+                                    <Setter TargetName="Underline" Property="DockPanel.Dock" Value="Right" />
+                                    <Setter TargetName="Underline" Property="Width" Value="2" />
+                                    <Setter TargetName="Underline" Property="Height" Value="Auto" />
+                                    <Setter TargetName="Underline" Property="Margin" Value="1,0,0,0" />
+                                </Trigger>
+                                <Trigger Property="TabItem.TabStripPlacement" Value="Top">
+                                    <Setter TargetName="ContentSite" Property="DockPanel.Dock" Value="Top" />
+                                    <Setter TargetName="Underline" Property="DockPanel.Dock" Value="Bottom" />
+                                    <Setter TargetName="Underline" Property="DockPanel.Dock" Value="Right" />
+                                    <Setter TargetName="Underline" Property="Height" Value="2" />
+                                    <Setter TargetName="Underline" Property="Width" Value="Auto" />
+                                    <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                                </Trigger>
+                                <Trigger Property="TabItem.TabStripPlacement" Value="Right">
+                                    <Setter TargetName="ContentSite" Property="DockPanel.Dock" Value="Right" />
+                                    <Setter TargetName="Underline" Property="DockPanel.Dock" Value="Left" />
+                                    <Setter TargetName="Underline" Property="Width" Value="2" />
+                                    <Setter TargetName="Underline" Property="Height" Value="Auto" />
+                                    <Setter TargetName="Underline" Property="Margin" Value="0,0,1,0" />
+                                </Trigger>
+                                <Trigger Property="TabItem.TabStripPlacement" Value="Bottom">
+                                    <Setter TargetName="ContentSite" Property="DockPanel.Dock" Value="Bottom" />
+                                    <Setter TargetName="Underline" Property="DockPanel.Dock" Value="Top" />
+                                    <Setter TargetName="Underline" Property="Height" Value="2" />
+                                    <Setter TargetName="Underline" Property="Width" Value="Auto" />
+                                    <Setter TargetName="Underline" Property="Margin" Value="0,0,0,1" />
+                                </Trigger>
+                                <Trigger Property="TabItem.IsSelected" Value="True">
+                                    <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush}" Property="TextElement.Foreground" />
+                                    <Setter TargetName="Underline" Value="{DynamicResource AccentColorBrush}" Property="Shape.Fill" />
+                                </Trigger>
+                                <Trigger Property="TabItem.IsSelected" Value="False">
+                                    <Setter TargetName="ContentSite" Value="{DynamicResource GrayNormalBrush}" Property="TextElement.Foreground" />
+                                    <Setter TargetName="Underline" Value="{DynamicResource GrayNormalBrush}" Property="Shape.Fill" />
+                                </Trigger>
+                                <Trigger SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True">
+                                    <Setter TargetName="ContentSite" Value="{DynamicResource GrayHoverBrush}" Property="TextElement.Foreground" />
+                                    <Setter TargetName="Underline" Value="{DynamicResource GrayHoverBrush}" Property="Shape.Fill" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True" />
+                                        <Condition Property="TabItem.IsSelected" Value="True" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="ContentSite" Value="{DynamicResource HighlightBrush}" Property="TextElement.Foreground" />
+                                    <Setter TargetName="Underline" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                                </MultiTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.BasedOn>
+    </Style>
+    <Style x:Key="NewMainMetroTabItemStyle" TargetType="{x:Type controls:MetroTabItem}" BasedOn="{StaticResource MetroTabItem}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="controls:ControlsHelper.HeaderFontWeight" Value="SemiBold" />
+        <Setter Property="controls:ControlsHelper.HeaderFontSize" Value="18" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MetroTabItem}">
+                    <Border Name="Border" HorizontalAlignment="Stretch" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
+                            <StackPanel Margin="{TemplateBinding Control.Padding}" Orientation="Horizontal">
+                                <controls:ContentControlEx Name="ContentSite" Margin="9 2 9 1" Padding="{TemplateBinding Control.Padding}" Foreground="{TemplateBinding Control.Foreground}" FontSize="{TemplateBinding controls:ControlsHelper.HeaderFontSize}" FontWeight="{TemplateBinding controls:ControlsHelper.HeaderFontWeight}" FontStretch="{TemplateBinding controls:ControlsHelper.HeaderFontStretch}" Content="{TemplateBinding HeaderedContentControl.Header}" ContentStringFormat="{TemplateBinding HeaderedContentControl.HeaderStringFormat}" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" ContentTemplateSelector="{TemplateBinding HeaderedContentControl.HeaderTemplateSelector}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ContentCharacterCasing="{Binding Path=(controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </StackPanel>
+                            <Grid>
+                                <Rectangle Name="Underline" 
+                                           HorizontalAlignment="Stretch" 
+                                           Height="2" 
+                                           Margin="0,0,0,0" 
+                                           SnapsToDevicePixels="True" 
+                                           Visibility="{Binding Path=(controls:TabControlHelper.IsUnderlined), 
+                                    RelativeSource={RelativeSource Mode=FindAncestor, 
+                                    AncestorType={x:Type TabControl}}, 
+                                    Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                <Polygon Name="UnderlinePointer" Points="0,10 10,0 20,10" VerticalAlignment="Bottom" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Center" Margin="0,-9,0,0" SnapsToDevicePixels="True" Height="10" />
+                                <Polygon Name="UnderlinePointerOverlay" Points="0,10 10,0 20,10" VerticalAlignment="Bottom" Fill="{DynamicResource WhiteBrush}" HorizontalAlignment="Center" Margin="0,-9,0,0" SnapsToDevicePixels="True" Height="7" />
+                                <Polygon Name="UnderlinePointerOverlay2" Points="0,10 10,0 20,10" VerticalAlignment="Bottom" Fill="{DynamicResource SecondaryNavigationBackgroundBrush}" HorizontalAlignment="Center" Margin="0,-9,0,0" SnapsToDevicePixels="True" Height="7" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabItem.IsSelected" Value="True">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource IdealForegroundColorBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="Underline" Value="{DynamicResource AccentColorBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="2" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,0,0,0" />
+                            <Setter TargetName="UnderlinePointer" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                        </Trigger>
+                        <Trigger Property="TabItem.IsSelected" Value="False">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource IdealForegroundColorBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="UIElement.Opacity" Value=".75" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="Underline" Value="{DynamicResource AccentColorBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="2" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,0,0,0" />
+                            <Setter TargetName="UnderlinePointer" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="UnderlinePointerOverlay" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="UnderlinePointerOverlay2" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True">
+                            <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="#C1C1C1" />
+                            <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush}" Property="TextElement.Background" />
+                            <Setter TargetName="Underline" Property="Shape.Fill" Value="#00FFFFFF" />
+                            <Setter TargetName="Underline" Property="Height" Value="2" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,0,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource GrayBrush2}" Property="TextElement.Foreground" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True" />
+                                <Condition Property="TabItem.IsSelected" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ContentSite" Value="{DynamicResource IdealForegroundColorBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="Underline" Value="{DynamicResource AccentColorBrush}" Property="Shape.Fill" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NewMainMetroTabItemStyle2" TargetType="{x:Type controls:MetroTabItem}" BasedOn="{StaticResource MetroTabItem}">
+        <Setter Property="Padding" Value="5 2 5 2" />
+        <Setter Property="Background" Value="{DynamicResource TransparentWhiteBrush}" />
+        <Setter Property="controls:ControlsHelper.HeaderFontWeight" Value="SemiBold" />
+        <Setter Property="controls:ControlsHelper.HeaderFontSize" Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MetroTabItem}">
+                    <Border Name="Border" HorizontalAlignment="Stretch" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
+                            <StackPanel Margin="{TemplateBinding Control.Padding}" Orientation="Horizontal">
+                                <controls:ContentControlEx Name="ContentSite" Margin="0,1,0,0" Padding="{TemplateBinding Control.Padding}" Foreground="{TemplateBinding Control.Foreground}" FontSize="{TemplateBinding controls:ControlsHelper.HeaderFontSize}" FontWeight="{TemplateBinding controls:ControlsHelper.HeaderFontWeight}" FontStretch="{TemplateBinding controls:ControlsHelper.HeaderFontStretch}" Content="{TemplateBinding HeaderedContentControl.Header}" ContentStringFormat="{TemplateBinding HeaderedContentControl.HeaderStringFormat}" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" ContentTemplateSelector="{TemplateBinding HeaderedContentControl.HeaderTemplateSelector}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ContentCharacterCasing="{Binding Path=(controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </StackPanel>
+                            <Grid>
+                                <Rectangle Name="Underline" HorizontalAlignment="Stretch" Height="2" Margin="0,0,0,0" SnapsToDevicePixels="True" Visibility="{Binding Path=(controls:TabControlHelper.IsUnderlined), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TabControl}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabItem.IsSelected" Value="True">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource Aurora.SecondayTabControl.SelectedTabItem.SelectedBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="Underline" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                        </Trigger>
+                        <Trigger Property="TabItem.IsSelected" Value="False">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource Aurora.SecondayTabControl.SelectedTabItem.NotSelectedBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="SemiBold" />
+                            <Setter TargetName="ContentSite" Property="UIElement.Opacity" Value="1" />
+                            <Setter TargetName="Underline" Value="{DynamicResource GrayNormalBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                        </Trigger>
+                        <Trigger SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource Aurora.SecondayTabControl.SelectedTabItem.NotSelectedOverBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="ContentSite" Value="{DynamicResource AccentColorBrush}" Property="TextElement.Background" />
+                            <Setter TargetName="Underline" Value="{DynamicResource GrayHoverBrush}" Property="Shape.Fill" />
+                            <Setter TargetName="Underline" Property="Height" Value="0" />
+                            <Setter TargetName="Underline" Property="Margin" Value="0,1,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ContentSite" Value="{DynamicResource GrayBrush5}" Property="TextElement.Foreground" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition SourceName="ContentSite" Property="UIElement.IsMouseOver" Value="True" />
+                                <Condition Property="TabItem.IsSelected" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ContentSite" Value="{DynamicResource Aurora.SecondayTabControl.SelectedTabItem.SelectedBrush}" Property="TextElement.Foreground" />
+                            <Setter TargetName="Underline" Value="{DynamicResource HighlightBrush}" Property="Shape.Fill" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MainNavigationTabControlStyle" TargetType="{x:Type controls:MetroTabControl}" BasedOn="{StaticResource ModifiedMetroTabControlStyle}">
+        <Setter Property="Background" Value="{DynamicResource TransparentWhiteBrush}" />
+    </Style>
+    <Style x:Key="MainNavigationTabItemStyle" TargetType="{x:Type controls:MetroTabItem}" BasedOn="{StaticResource NewMainMetroTabItemStyle}" />
+    <Style x:Key="MainNavigationChildTabItemStyle" TargetType="{x:Type controls:MetroTabItem}" BasedOn="{StaticResource NewMainMetroTabItemStyle2}" />
+    <Style x:Key="UnderlayBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Height" Value="29" />
+        <Setter Property="Background" Value="{DynamicResource SecondaryNavigationBackgroundBrush}" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+    </Style>
+    <Style x:Key="OverlayBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+    </Style>
+    <Style x:Key="SettingsTabControlStyle" TargetType="{x:Type controls:MetroTabControl}" BasedOn="{StaticResource MetroTabControl}">
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+</ResourceDictionary>

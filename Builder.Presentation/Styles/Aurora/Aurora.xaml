@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Controls/AuroraPanel.xaml" />
+        <ResourceDictionary Source="Controls/Expander.xaml" />
+        <ResourceDictionary Source="Controls/Icons.xaml" />
+        <ResourceDictionary Source="Controls/PortraitButton.xaml" />
+        <ResourceDictionary Source="Controls/ElementDescriptionPanel.xaml" />
+        <ResourceDictionary Source="Layout/SliderTitleBlock.xaml" />
+        <ResourceDictionary Source="Layout/CharacterInformationPanelStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Builder.Presentation.Controls"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <Style x:Key="Aurora.PortraitButtonStyle" TargetType="{x:Type controls:PortraitButton}">
+        <Setter Property="Control.Background" Value="{DynamicResource AuroraBlackColorBrush}"/>
+        <Setter Property="Control.Foreground" Value="{DynamicResource AuroraGoldColorBrush}"/>
+        <Setter Property="Control.BorderBrush" Value="{DynamicResource HighlightBrush}"/>
+        <Setter Property="controls:PortraitButton.PortraitSize" Value="100"/>
+        <Setter Property="controls:PortraitButton.PortraitScale" Value="0.5"/>
+        <Setter Property="controls:PortraitButton.PortraitBorderThickness" Value="2.5"/>
+        <Setter Property="Control.FontSize" Value="16"/>
+        <Setter Property="controls:PortraitButton.Symbol" Value="🔍"/>
+        <Setter Property="controls:PortraitButton.PortraitStretch" Value="UniformToFill"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:PortraitButton}">
+                    <Grid Width="{TemplateBinding controls:PortraitButton.PortaitSize}"
+                Height="{TemplateBinding controls:PortraitButton.PortaitSize}">
+                        <Ellipse IsHitTestVisible="false" Margin="0" Fill="{TemplateBinding Control.Background}"
+                     Width="{TemplateBinding controls:PortraitButton.PortaitSize}"
+                     Height="{TemplateBinding controls:PortraitButton.PortaitSize}"/>
+                        <TextBlock Text="{TemplateBinding controls:PortraitButton.Symbol}"
+                       FontSize="{TemplateBinding Control.FontSize}" FontFamily="Segoe UI Symbol"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"
+                       Foreground="{TemplateBinding Control.Foreground}"/>
+                        <Button x:Name="PortraitButton" Command="{TemplateBinding ButtonBase.Command}"
+                    CommandParameter="{TemplateBinding ButtonBase.CommandParameter}"
+                    CommandTarget="{TemplateBinding ButtonBase.CommandTarget}"
+                    ToolTip="{TemplateBinding FrameworkElement.ToolTip}" Padding="0" BorderThickness="0" Margin="1"
+                    Background="{TemplateBinding Control.Background}">
+                            <UIElement.OpacityMask>
+                                <VisualBrush Stretch="Uniform">
+                                    <VisualBrush.Visual>
+                                        <Ellipse Fill="{TemplateBinding Control.Background}" Width="10" Height="10"/>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </UIElement.OpacityMask>
+                            <ContentControl.Content>
+                                <Grid>
+                                    <Image Source="{TemplateBinding controls:PortraitButton.ImageSource}" HorizontalAlignment="Center"
+                         VerticalAlignment="Center" Stretch="{TemplateBinding controls:PortraitButton.PortraitStretch}"
+                         RenderTransformOrigin="0.5,0.5">
+                                        <FrameworkElement.LayoutTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="{Binding PortraitScale, RelativeSource={RelativeSource TemplatedParent}}"
+                                        ScaleX="{Binding PortraitScale, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            </TransformGroup>
+                                        </FrameworkElement.LayoutTransform>
+                                    </Image>
+                                </Grid>
+                            </ContentControl.Content>
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Triggers>
+                                        <Trigger Property="UIElement.IsMouseOver" Value="true">
+                                            <TriggerBase.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="1" To="0.25" Storyboard.TargetProperty="Opacity" Duration="0:0:0.25"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </TriggerBase.EnterActions>
+                                            <TriggerBase.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From=".25" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.25"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </TriggerBase.ExitActions>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </FrameworkElement.Style>
+                        </Button>
+                        <Ellipse IsHitTestVisible="false"
+                     StrokeThickness="{TemplateBinding controls:PortraitButton.PortraitBorderThickness}"
+                     Stroke="{TemplateBinding Control.BorderBrush}"
+                     Width="{TemplateBinding controls:PortraitButton.PortaitSize}"
+                     Height="{TemplateBinding controls:PortraitButton.PortaitSize}">
+                            <UIElement.Effect>
+                                <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="1"/>
+                            </UIElement.Effect>
+                        </Ellipse>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type controls:PortraitButton}" BasedOn="{StaticResource Aurora.PortraitButtonStyle}"/>
+</ResourceDictionary>
