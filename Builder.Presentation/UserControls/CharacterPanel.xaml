@@ -3,20 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Builder.Presentation.UserControls"
+             xmlns:local="clr-namespace:Builder.Presentation.UserControls.Content"
              xmlns:controls="clr-namespace:Builder.Presentation.Controls"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:shell="clr-namespace:Builder.Presentation.ViewModels.Shell"
              xmlns:fa="http://schemas.fontawesome.com/wpf"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             xmlns:userControlsContent="clr-namespace:Builder.Presentation.UserControls.Content"
              Background="{DynamicResource WhiteBrush}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Aurora/Controls/Expander.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Border>
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <FrameworkElement.Resources>
-                   <Style x:Key="{x:Type controls:AuroraExpander}" TargetType="{x:Type controls:AuroraExpander}" BasedOn="{StaticResource {x:Type controls:AuroraExpander}}">
-
+                    <Style TargetType="{x:Type controls:AuroraExpander}" BasedOn="{StaticResource {x:Type controls:AuroraExpander}}">
                         <Setter Property="mah:ControlsHelper.HeaderFontSize" Value="10"/>
                         <Setter Property="Control.Background" Value="{DynamicResource GrayBrush9}"/>
                         <Setter Property="mah:GroupBoxHelper.HeaderForeground" Value="{DynamicResource HighlightBrush}"/>
@@ -42,10 +47,10 @@
                     </Grid>
                 </controls:AuroraExpander>
                 <controls:AuroraExpander x:Name="ExpanderSavingThrows" Expanded="ExpanderSpells_OnExpanded" Header="Saving Throws">
-                    <userControlsContent:SavingThrowsPanelContent/>
+                    <local:SavingThrowsPanelContent/>
                 </controls:AuroraExpander>
                 <controls:AuroraExpander x:Name="ExpanderSkills" Expanded="ExpanderSpells_OnExpanded" Header="Skills">
-                    <userControlsContent:SkillsPanelContent/>
+                    <local:SkillsPanelContent/>
                 </controls:AuroraExpander>
                 <controls:AuroraExpander Header="Languages &amp; Proficiencies">
                     <Grid>
@@ -63,7 +68,7 @@
                     </Grid>
                 </controls:AuroraExpander>
                 <controls:AuroraExpander x:Name="ExpanderSpells" Expanded="ExpanderSpells_OnExpanded" Header="Spells Known">
-                    <userControlsContent:SpellsPanelContent MaxWidth="296" HorizontalAlignment="Left"/>
+                    <local:SpellsPanelContent MaxWidth="296" HorizontalAlignment="Left"/>
                 </controls:AuroraExpander>
             </StackPanel>
         </ScrollViewer>
