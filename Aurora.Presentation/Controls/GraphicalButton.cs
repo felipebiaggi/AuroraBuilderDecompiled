@@ -6,54 +6,31 @@ namespace Aurora.Presentation.Controls
 {
     public class GraphicalButton : Button
     {
-        public static readonly DependencyProperty TitleProperty;
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(nameof(Title), typeof(string), typeof(GraphicalButton), new PropertyMetadata((object)null));
+        public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register(nameof(Description), typeof(string), typeof(GraphicalButton), new PropertyMetadata((object)null));
+        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(nameof(ImageSource), typeof(ImageSource), typeof(GraphicalButton), new PropertyMetadata((object)null));
 
-        public static readonly DependencyProperty DescriptionProperty;
-
-        public static readonly DependencyProperty ImageSourceProperty;
+        static GraphicalButton()
+        {
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(GraphicalButton), (PropertyMetadata)new FrameworkPropertyMetadata((object)typeof(GraphicalButton)));
+        }
 
         public string Title
         {
-            get
-            {
-                return (string)GetValue(TitleProperty);
-            }
-            set
-            {
-                SetValue(TitleProperty, value);
-            }
+            get => (string)this.GetValue(GraphicalButton.TitleProperty);
+            set => this.SetValue(GraphicalButton.TitleProperty, (object)value);
         }
 
         public string Description
         {
-            get
-            {
-                return (string)GetValue(DescriptionProperty);
-            }
-            set
-            {
-                SetValue(DescriptionProperty, value);
-            }
+            get => (string)this.GetValue(GraphicalButton.DescriptionProperty);
+            set => this.SetValue(GraphicalButton.DescriptionProperty, (object)value);
         }
 
         public ImageSource ImageSource
         {
-            get
-            {
-                return (ImageSource)GetValue(ImageSourceProperty);
-            }
-            set
-            {
-                SetValue(ImageSourceProperty, value);
-            }
-        }
-
-        static GraphicalButton()
-        {
-            TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(GraphicalButton), new PropertyMetadata((object)null));
-            DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(GraphicalButton), new PropertyMetadata((object)null));
-            ImageSourceProperty = DependencyProperty.Register("ImageSource", typeof(ImageSource), typeof(GraphicalButton), new PropertyMetadata((object)null));
-            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(GraphicalButton), new FrameworkPropertyMetadata(typeof(GraphicalButton)));
+            get => (ImageSource)this.GetValue(GraphicalButton.ImageSourceProperty);
+            set => this.SetValue(GraphicalButton.ImageSourceProperty, (object)value);
         }
     }
 }

@@ -5,54 +5,31 @@ namespace Aurora.Presentation.Controls
 {
     public class CommandButton : Button
     {
-        public static readonly DependencyProperty CommandTextProperty;
+        public static readonly DependencyProperty CommandTextProperty = DependencyProperty.Register(nameof(CommandText), typeof(string), typeof(CommandButton), new PropertyMetadata((object)null));
+        public static readonly DependencyProperty CommandTextVisibilityProperty = DependencyProperty.Register(nameof(CommandTextVisibility), typeof(Visibility), typeof(CommandButton), new PropertyMetadata((object)Visibility.Visible));
+        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(CommandButton), new PropertyMetadata((object)new CornerRadius()));
 
-        public static readonly DependencyProperty CommandTextVisibilityProperty;
-
-        public static readonly DependencyProperty CornerRadiusProperty;
+        static CommandButton()
+        {
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(CommandButton), (PropertyMetadata)new FrameworkPropertyMetadata((object)typeof(CommandButton)));
+        }
 
         public string CommandText
         {
-            get
-            {
-                return (string)GetValue(CommandTextProperty);
-            }
-            set
-            {
-                SetValue(CommandTextProperty, value);
-            }
+            get => (string)this.GetValue(CommandButton.CommandTextProperty);
+            set => this.SetValue(CommandButton.CommandTextProperty, (object)value);
         }
 
         public Visibility CommandTextVisibility
         {
-            get
-            {
-                return (Visibility)GetValue(CommandTextVisibilityProperty);
-            }
-            set
-            {
-                SetValue(CommandTextVisibilityProperty, value);
-            }
+            get => (Visibility)this.GetValue(CommandButton.CommandTextVisibilityProperty);
+            set => this.SetValue(CommandButton.CommandTextVisibilityProperty, (object)value);
         }
 
         public CornerRadius CornerRadius
         {
-            get
-            {
-                return (CornerRadius)GetValue(CornerRadiusProperty);
-            }
-            set
-            {
-                SetValue(CornerRadiusProperty, value);
-            }
-        }
-
-        static CommandButton()
-        {
-            CommandTextProperty = DependencyProperty.Register("CommandText", typeof(string), typeof(CommandButton), new PropertyMetadata((object)null));
-            CommandTextVisibilityProperty = DependencyProperty.Register("CommandTextVisibility", typeof(Visibility), typeof(CommandButton), new PropertyMetadata(Visibility.Visible));
-            CornerRadiusProperty = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(CommandButton), new PropertyMetadata(default(CornerRadius)));
-            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(CommandButton), new FrameworkPropertyMetadata(typeof(CommandButton)));
+            get => (CornerRadius)this.GetValue(CommandButton.CornerRadiusProperty);
+            set => this.SetValue(CommandButton.CornerRadiusProperty, (object)value);
         }
     }
 }

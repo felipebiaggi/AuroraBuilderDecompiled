@@ -31,10 +31,12 @@
                         <Setter Property="mah:ControlsHelper.HeaderMargin" Value="0,1"/>
                     </Style>
                 </FrameworkElement.Resources>
-                <controls:AuroraExpander x:Name="ExpanderDebug" Header="DEBUG INFO"
-                                 mah:GroupBoxHelper.HeaderForeground="{DynamicResource DeveloperIndicatorForegroundColorBrush}"
-                                 Visibility="{Binding IsInDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    <Grid MaxWidth="292">
+                <controls:AuroraExpander 
+                    x:Name="ExpanderDebug" 
+                    Header="DEBUG INFO" 
+                    mah:GroupBoxHelper.HeaderForeground="{DynamicResource DeveloperIndicatorForegroundColorBrush}" 
+                    Visibility="{Binding IsInDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Grid MaxWidth="292">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>

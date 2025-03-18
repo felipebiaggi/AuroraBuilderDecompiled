@@ -705,10 +705,6 @@
       <Project>{34ac80e0-c5a5-40bd-b704-8621f8328c2a}</Project>
       <Name>Aurora.Documents</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Aurora.Presentation\Aurora.Presentation.csproj">
-      <Project>{73a20727-8d02-4d05-9867-3adc0f7c7f75}</Project>
-      <Name>Aurora.Presentation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Builder.Core\Builder.Core.csproj">
       <Project>{9b59b7d0-75e3-48d2-a3cc-c4b26c8a12b3}</Project>
       <Name>Builder.Core</Name>
