@@ -89,11 +89,11 @@
     <Reference Include="Microsoft.AppCenter.Crashes, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AppCenter.Crashes.2.6.2\lib\net45\Microsoft.AppCenter.Crashes.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.WPF.1.0.1\lib\net45\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
-    </Reference>
-    <Reference Include="MoonPdfLib">
-      <HintPath>..\libs\MoonPdfLib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -129,7 +129,7 @@
     <Reference Include="System.Speech" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\Expression.Blend.Sdk.WPF.1.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.XML" />
@@ -704,6 +704,10 @@
     <ProjectReference Include="..\Aurora.Documents\Aurora.Documents.csproj">
       <Project>{34ac80e0-c5a5-40bd-b704-8621f8328c2a}</Project>
       <Name>Aurora.Documents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aurora.Presentation\Aurora.Presentation.csproj">
+      <Project>{35999f68-5cc6-44af-a24d-222836c599e9}</Project>
+      <Name>Aurora.Presentation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Builder.Core\Builder.Core.csproj">
       <Project>{9b59b7d0-75e3-48d2-a3cc-c4b26c8a12b3}</Project>
