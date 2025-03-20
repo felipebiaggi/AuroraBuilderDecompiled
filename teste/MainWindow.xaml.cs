@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Builder.Presentation.UserControls
+namespace teste
 {
     /// <summary>
-    /// Interaction logic for CharacterOverview.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class CharacterOverview : UserControl
+    public partial class MainWindow : Window
     {
-        public CharacterOverview()
+        public MainWindow()
         {
             InitializeComponent();
         }
