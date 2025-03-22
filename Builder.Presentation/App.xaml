@@ -22,7 +22,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Accents/Purple.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Theme/AuroraDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Aurora.Presentation;component/Styles/Theme/AuroraLight.xaml" />
                 <ResourceDictionary Source="/Styles/Clean.xaml" />
                 <ResourceDictionary Source="/Styles/Controls/AlteredTabControl.xaml" />
                 <ResourceDictionary Source="/Styles/Controls/CircularProgressBar.xaml" />

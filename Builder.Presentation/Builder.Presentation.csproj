@@ -362,6 +362,21 @@
     <Compile Include="Syndication\SyndicationUpdateResultEventArgs.cs" />
     <Compile Include="Telemetry\AnalyticsErrorHelper.cs" />
     <Compile Include="Telemetry\AnalyticsEventHelper.cs" />
+    <Compile Include="UserControls\AbilitiesContent.xaml.cs">
+      <DependentUpon>AbilitiesContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CharacterPanel.xaml.cs">
+      <DependentUpon>CharacterPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Content\SavingThrowsPanelContent.xaml.cs">
+      <DependentUpon>SavingThrowsPanelContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Content\SkillsPanelContent.xaml.cs">
+      <DependentUpon>SkillsPanelContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Content\SpellsPanelContent.xaml.cs">
+      <DependentUpon>SpellsPanelContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\CharacterFileVerification.cs" />
     <Compile Include="Utilities\Crc32.cs" />
     <Compile Include="Utilities\ElementDescriptionGenerator.cs" />
@@ -619,6 +634,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\AbilitiesContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CharacterPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Content\SavingThrowsPanelContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Content\SkillsPanelContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Content\SpellsPanelContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Sources\SourceItem.cs" />
@@ -679,7 +714,6 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Themes\" />
-    <Folder Include="UserControls\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
